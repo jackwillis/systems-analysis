@@ -1,6 +1,6 @@
 ---
 name: design-causal-study
-description: Use when evaluating whether a dataset or finding supports a causal claim, designing an observational study or experiment, or asked to analyze why something happens (not just whether it correlates). Triggers on phrases like "does X cause Y", "should we change X to improve Y", "we noticed X and Y move together".
+description: Use when evaluating whether a dataset or finding supports a causal claim, designing an observational study or experiment, or asked to analyze why something happens (not just whether it correlates). Triggers on "does X cause Y", "should we change X to improve Y", "we noticed X and Y move together", "the data shows...", "our A/B test found...", drawing conclusions from observational data, confounders, selection bias.
 ---
 
 # Design a Causal Study
@@ -173,3 +173,9 @@ What this study can and cannot answer: [1-2 sentences]
 | Treating selection as confounding | Reverse causation requires time-ordering check, not just adjustment |
 | Running an experiment on the wrong population | Eligibility criteria must match the estimand's target population |
 | Choosing outcomes post-hoc | Pre-specify primary outcome before data collection or analysis |
+
+## Transition Signals
+
+- **Question is "why is this behaving this way"** rather than "does X cause Y" → start with **representing-and-intervening**.
+- **Causal structure reveals a regulation problem** (not enough control variety to act on identified causes) → switch to **requisite-variety**.
+- **Can't state the estimand** — the question may not be causal yet. Model the system first → **representing-and-intervening**.
