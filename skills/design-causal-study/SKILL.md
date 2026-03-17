@@ -179,3 +179,4 @@ What this study can and cannot answer: [1-2 sentences]
 - **Question is "why is this behaving this way"** rather than "does X cause Y" → start with **representing-and-intervening**.
 - **Causal structure reveals a regulation problem** (not enough control variety to act on identified causes) → switch to **requisite-variety**.
 - **Can't state the estimand** — the question may not be causal yet. Model the system first → **representing-and-intervening**.
+- **Study designed, ready to execute** — if **writing-plans** is available, use it to structure the study execution (data collection, analysis pipeline, reporting). For independent workstreams (e.g., data extraction, power analysis, sensitivity analysis), **subagent-driven-development** can parallelize.

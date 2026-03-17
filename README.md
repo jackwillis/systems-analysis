@@ -62,6 +62,18 @@ Use when: "does X cause Y", "should we change X to improve Y", drawing conclusio
 
 Each skill includes transition signals. Debugging may reveal a regulation problem; regulation may need causal evidence; a causal question may turn out to be "why is this behaving this way" — and the skills hand off to each other at those points.
 
+### Works well with Superpowers
+
+These skills focus on *when to stop and think* — they don't manage plans, tasks, or execution. For that, pair them with [Superpowers](https://github.com/obra/superpowers):
+
+- **Brainstorming** — explore the problem space before committing to an approach. Systems-analysis skills then pressure-test whatever direction you choose.
+- **Writing Plans** — turn your model into a structured plan. Representing and Intervening builds the model; Writing Plans turns it into steps.
+- **Subagent-Driven Development / Executing Plans** — execute the plan with review checkpoints. The analysis skills catch when execution reveals a wrong model.
+
+```
+/plugin install superpowers@claude-plugins-official
+```
+
 ### Sources
 
 - Hacking, I. (1983). *Representing and Intervening.*
