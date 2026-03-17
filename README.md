@@ -145,6 +145,20 @@ Extract text from PDFs. Tries `pdftotext` first (fast, digital PDFs), falls back
 
 **Use when:** "read this PDF", "extract text", scanned documents, image-heavy PDFs.
 
+## Sources
+
+- Argyris, C. & Schon, D. (1978). *Organizational Learning*. Addison-Wesley.
+- Ashby, W. R. (1956). *An Introduction to Cybernetics*. Chapman & Hall.
+- Conant, R. C. & Ashby, W. R. (1970). Every good regulator of a system must be a model of that system. *International Journal of Systems Science*, 1(2), 89–97.
+- Dennett, D. C. (1984). Cognitive wheels: The frame problem of AI. In C. Hookaway (Ed.), *Minds, Machines and Evolution*. Cambridge University Press.
+- Fodor, J. A. (1987). Modules, frames, fridgeons, sleeping dogs, and the music of the spheres. In Z. W. Pylyshyn (Ed.), *The Robot's Dilemma: The Frame Problem in Artificial Intelligence*. Ablex.
+- Hacking, I. (1983). *Representing and Intervening*. Cambridge University Press.
+- Hayes, P. J. (1973). The frame problem and related problems in artificial intelligence. University of Edinburgh.
+- McCarthy, J. & Hayes, P. J. (1969). Some philosophical problems from the standpoint of artificial intelligence. *Machine Intelligence*, 4, 463–502.
+- Pearl, J. & Mackenzie, D. (2018). *The Book of Why*. Basic Books.
+- Schon, D. A. (1983). *The Reflective Practitioner*. Basic Books.
+- Shanahan, M. (1997). *Solving the Frame Problem*. MIT Press.
+
 ## License
 
 [MIT](LICENSE)
