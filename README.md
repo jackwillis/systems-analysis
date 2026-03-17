@@ -109,7 +109,7 @@ pipx install trafilatura                        # optional: article extraction
 /fetch-markdown
 ```
 
-Get clean markdown from a URL. Tries a markdown proxy, then trafilatura for article extraction, then local pandoc conversion, then lynx as a plaintext fallback. Uses a fraction of the context that WebFetch needs.
+Get clean markdown from a URL. Tries a markdown proxy, then trafilatura for article extraction, then local pandoc conversion, then lynx as a plaintext fallback. Uses significantly less context than WebFetch.
 
 **Use when:** fetching web content for analysis, summarization, or reference.
 
