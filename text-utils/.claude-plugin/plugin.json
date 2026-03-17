@@ -1,0 +1,18 @@
+{
+  "name": "text-utils",
+  "version": "0.1.0",
+  "description": "Efficient text extraction and format conversion: fetch markdown from URLs, render markdown to PDF, extract text from PDFs.",
+  "author": {
+    "name": "Jack Willis",
+    "email": "jack@attac.us"
+  },
+  "license": "MIT",
+  "keywords": [
+    "markdown",
+    "pdf",
+    "text",
+    "conversion",
+    "fetch",
+    "ocr"
+  ]
+}

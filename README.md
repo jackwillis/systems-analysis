@@ -85,6 +85,50 @@ These skills focus on *when to stop and think* — they don't manage plans, task
 - Argyris, C. & Schon, D. (1978). *Organizational Learning.*
 - Pearl, J. & Mackenzie, D. (2018). *The Book of Why.*
 
+### Text Utils
+
+**Efficient text extraction and format conversion.**
+
+```
+/plugin install text-utils@jackwillis
+```
+
+Three skills for getting text in and out of formats without wasting context.
+
+#### Fetch Markdown
+
+```
+/fetch-markdown
+```
+
+Get clean markdown from a URL. Tries `Accept: text/markdown` header, then a markdown proxy, then local `curl | pandoc` conversion. Uses a fraction of the context that WebFetch needs.
+
+**Use when:** fetching web content for analysis, summarization, or reference.
+
+#### Markdown to PDF
+
+```
+/markdown-to-pdf
+```
+
+Render markdown to styled PDF using pandoc + weasyprint + CSS. Ships with a default theme and a double-spaced editing theme. Bring your own CSS for custom styling.
+
+**Use when:** "make a PDF", "printable version", "export as PDF".
+
+**Requires:** `pandoc`, `weasyprint`
+
+#### Read PDF
+
+```
+/read-pdf
+```
+
+Extract text from PDFs. Tries `pdftotext` first (fast, digital PDFs), falls back to OCR via `tesseract` for scanned documents. Detects which is needed automatically.
+
+**Use when:** "read this PDF", "extract text", scanned documents, image-heavy PDFs.
+
+**Requires:** `poppler` (`pdftotext`), optionally `tesseract` for OCR
+
 ## License
 
 [MIT](LICENSE)

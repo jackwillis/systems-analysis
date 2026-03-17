@@ -10,7 +10,12 @@
     {
       "name": "systems-analysis",
       "description": "Frameworks for modeling systems before intervening: epistemic discipline (Hacking), regulatory analysis (Ashby), and causal identification (Pearl).",
-      "source": "./"
+      "source": "./systems-analysis"
+    },
+    {
+      "name": "text-utils",
+      "description": "Efficient text extraction and format conversion: fetch markdown from URLs, render markdown to PDF, extract text from PDFs.",
+      "source": "./text-utils"
     }
   ]
 }
