@@ -70,13 +70,15 @@ Before claiming X causes Y, define exactly what you're measuring, draw the causa
 /frame-problem
 ```
 
+<img src="assets/frame-problem.svg" align="left" width="120">
+
 Every action and every line of reasoning assumes a frame — things you take to stay the same. This skill forces you to make those assumptions explicit so they can be checked. Name what you're holding constant, check whether it's still true, question whether you're solving the right problem, and admit what your current vocabulary can't see. Recognizes three failure modes from Dennett's robot thought experiment: ignoring side effects (R1), considering everything (R1D1), and meta-paralysis over relevance (R2D1).
 
 **Use when:** stale state, inherited problem framing, confidence without re-verification, any gap between when information was gathered and when it's being used. Based on Fodor (1987), Dennett (1984), Hayes (1973).
 
 #### Transitions
 
-Each skill includes transition signals. Debugging may reveal a regulation problem; regulation may need causal evidence; a causal question may turn out to be "why is this behaving this way" — and the skills hand off to each other at those points.
+Each skill includes transition signals that hand off to the others when the situation shifts. Debugging may reveal a regulation problem; regulation may need causal evidence; a causal question may turn out to be "why is this behaving this way"; and at any point, assumptions may have gone stale without being re-examined. The frame-problem skill cuts across the other three — it fires whenever an agent's implicit assumptions about what hasn't changed might be wrong, regardless of which skill is currently active.
 
 #### Works well with Superpowers
 
@@ -146,6 +148,25 @@ Render markdown to styled PDF using pandoc + weasyprint + CSS. Ships with three 
 Extract text from PDFs. Tries `pdftotext` first (fast, digital PDFs), falls back to OCR via `tesseract` for scanned documents. Detects which is needed automatically.
 
 **Use when:** "read this PDF", "extract text", scanned documents, image-heavy PDFs.
+
+## Sources
+
+<details>
+<summary>Bibliography</summary>
+
+- Argyris, C. & Schon, D. (1978). *Organizational Learning*. Addison-Wesley.
+- Ashby, W. R. (1956). *An Introduction to Cybernetics*. Chapman & Hall.
+- Conant, R. C. & Ashby, W. R. (1970). Every good regulator of a system must be a model of that system. *International Journal of Systems Science*, 1(2), 89–97.
+- Dennett, D. C. (1984). Cognitive wheels: The frame problem of AI. In C. Hookaway (Ed.), *Minds, Machines and Evolution*. Cambridge University Press.
+- Fodor, J. A. (1987). Modules, frames, fridgeons, sleeping dogs, and the music of the spheres. In Z. W. Pylyshyn (Ed.), *The Robot's Dilemma: The Frame Problem in Artificial Intelligence*. Ablex.
+- Hacking, I. (1983). *Representing and Intervening*. Cambridge University Press.
+- Hayes, P. J. (1973). The frame problem and related problems in artificial intelligence. University of Edinburgh.
+- McCarthy, J. & Hayes, P. J. (1969). Some philosophical problems from the standpoint of artificial intelligence. *Machine Intelligence*, 4, 463–502.
+- Pearl, J. & Mackenzie, D. (2018). *The Book of Why*. Basic Books.
+- Schon, D. A. (1983). *The Reflective Practitioner*. Basic Books.
+- Shanahan, M. (1997). *Solving the Frame Problem*. MIT Press.
+
+</details>
 
 ## License
 
