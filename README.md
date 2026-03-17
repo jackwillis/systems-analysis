@@ -14,6 +14,8 @@ Then install individual plugins:
 /plugin install systems-analysis@jackwillis
 ```
 
+Then reboot Claude to load the new skills.
+
 ---
 
 ## systems-analysis
