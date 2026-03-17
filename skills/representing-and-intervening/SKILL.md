@@ -1,6 +1,6 @@
 ---
 name: representing-and-intervening
-description: Use when debugging, diagnosing, or investigating system behavior — especially when tempted to jump to fixes, checklists, or tool-assisted reasoning before understanding the system. Triggers on "why is this happening", "what should I try", "help me debug", "let me just try...", unexplained gaps between expected and observed, multiple simultaneous changes with unclear results, reaching for tools before stating a model.
+description: Use when debugging, diagnosing, or investigating system behavior — especially when tempted to jump to fixes or tool-assisted reasoning before understanding the system. Triggers on "why is this happening", "what should I try", "help me debug", "let me just try...", unexplained gaps between expected and observed, reaching for tools before stating a model.
 ---
 
 # Representing and Intervening
@@ -13,7 +13,7 @@ You must model a system before predicting its behavior, and predict before inter
 |-------|--------|------|
 | **Represent** | State the model: components, relationships, assumptions | — |
 | **Predict** | What should we observe? Write it down. | No intervention without prediction |
-| **Intervene** | List available tests for the prediction, pick one, compare result. | One variable at a time |
+| **Intervene** | Pick one test from the repertoire. Compare result to prediction. | One variable at a time |
 | **Observe** | Record actual vs. predicted | — |
 | **Update** | Prediction wrong? → See Update Decision | — |
 
@@ -24,9 +24,13 @@ You must model a system before predicting its behavior, and predict before inter
 - **Lightweight (default):** Natural language model and predictions. Always start here.
 - **Formal (opt-in):** Tool-assisted. Only after lightweight model exists.
 
+## Intervention Repertoire
+
+Before picking a test, enumerate what's available: REPL, spec, logs, query inspection, instrumentation, benchmark. The first one you think of is rarely the most informative.
+
 ## Problem Setting (Schon)
 
-Before acting on a diagnosis, are you solving the right problem, or the wrong problem correctly? Trace the assumption chain to its deepest dependency. Present the human with one pointed question — not the whole chain.
+Are you solving the right problem, or the wrong problem correctly? Trace the assumption chain to its deepest dependency. Present one pointed question — not the whole chain.
 
 ## Update Decision
 
@@ -40,30 +44,30 @@ digraph update {
 }
 ```
 
-Single-loop: tune parameters. Double-loop: revise model (Argyris). Ashby: if the model lacks variety, no tuning helps.
+Tune parameters = single-loop. Revise model = double-loop (Argyris). Ashby: if the model lacks variety, no tuning helps.
 
 ## Red Flags
 
 Stop and return to Represent if you catch yourself:
 - "Let me just try..." (intervening without predicting)
 - Reaching for a tool before the human has spoken
-- "Close enough" (skipping the observe/update cycle)
-- Multiple simultaneous changes (uninterpretable results)
-- "It partially worked, let's tune" (may be structural, not parametric)
+- "Close enough" (skipping observe/update)
+- Multiple simultaneous changes (uninterpretable)
+- "It partially worked, let's tune" (structural, not parametric?)
 
 ## Rationalizations
 
 | Thought | Reality |
 |---------|---------|
-| "Trying IS learning" | Predict first. Without prediction, results are noise. |
+| "Trying IS learning" | Without prediction, results are noise. |
 | "The tool will figure it out" | No model in → no insight out. |
-| "Close enough" | Wrong in a way you haven't identified yet. |
-| "The model is implicit" | Implicit models can't be checked. Write it down. |
+| "Close enough" | Wrong in a way you haven't identified. |
+| "The model is implicit" | Implicit models can't be checked. |
 | "Predicting is overhead" | 30 seconds to predict vs. hours undirected. |
-| "Let me give you a checklist" | Checklist = intervention without representation. Model first. |
+| "Let me give you a checklist" | Checklist = intervention without representation. |
 
 ## Transition Signals
 
 - **Model reveals a regulation problem** ("we keep adding rules") → switch to **requisite-variety**.
-- **Represent phase needs causal structure from observational data** → switch to **design-causal-study**.
+- **Need causal structure from observational data** → switch to **design-causal-study**.
 - **Production is down, what broke?** → use **systematic-debugging** (forensic, not epistemic).

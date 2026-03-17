@@ -1,10 +1,10 @@
 # systems-analysis
 
-Claude Code plugin: systems analysis skills from Hacking, Ashby, and Pearl.
+Claude Code plugin for systems analysis.
 
-## The shared principle
+AI coding agents are biased toward action — they'll try a fix before understanding why something broke, add more rules when the problem is that rules can't keep up, or draw causal conclusions from correlations. These are the same mistakes humans make, just faster.
 
-Model the system before intervening. All three skills enforce this in different domains:
+This plugin adds three skills that enforce one shared discipline: **model the system before intervening.** Each applies this in a different domain:
 
 | Skill | Domain | Enforces |
 |-------|--------|----------|
