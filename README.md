@@ -1,5 +1,9 @@
 # Jack's Claude Code Plugins
 
+![Claude Code Plugins](assets/header.svg)
+
+Skills that make Claude stop and think before acting — model the system, check the data, extract the content.
+
 ## Installation
 
 Add the marketplace, then install any plugin:
@@ -9,8 +13,6 @@ Add the marketplace, then install any plugin:
 ```
 
 Reboot Claude after installing plugins to load new skills.
-
-![Claude Code Plugins](assets/header.svg)
 
 ## Plugins
 
@@ -36,9 +38,7 @@ This plugin adds three skills that enforce one shared discipline: **model the sy
 
 State what you think is happening, predict what you should see, then test one thing at a time. Forces you to enumerate available tests (script runner, spec, logs, query inspection) before grabbing the first one. When a prediction fails, asks whether the model is structurally wrong or just miscalibrated — the difference between rethinking your approach and tuning a parameter.
 
-**Use when:** "why is this happening", "help me debug", unexplained gaps between expected and observed behavior.
-
-**Sources:** Hacking (1983), Schon (1983), Argyris & Schon (1978)
+**Use when:** "why is this happening", "help me debug", unexplained gaps between expected and observed behavior. Based on Hacking (1983), Schon (1983), Argyris & Schon (1978).
 
 #### Requisite Variety
 
@@ -50,9 +50,7 @@ State what you think is happening, predict what you should see, then test one th
 
 When a control system keeps failing despite more rules, more alerts, more checks — this skill asks whether the controller has enough response variety to match its disturbances, whether it contains a model of what it's controlling, and whether you can find structure in the problem that makes it tractable. Three principles applied in order: capacity, then structure, then constraints.
 
-**Use when:** "why can't we control this", regulation failure, alert fatigue, whack-a-mole against adaptive adversaries.
-
-**Sources:** Ashby (1956), Conant & Ashby (1970)
+**Use when:** "why can't we control this", regulation failure, alert fatigue, whack-a-mole against adaptive adversaries. Based on Ashby (1956), Conant & Ashby (1970).
 
 #### Design a Causal Study
 
@@ -64,9 +62,7 @@ When a control system keeps failing despite more rules, more alerts, more checks
 
 Before claiming X causes Y, define exactly what you're measuring, draw the causal structure, and check whether the data can actually answer the question. Seven steps that prevent the most common errors: adjusting for variables on the causal path, conditioning on colliders, and skipping the estimand entirely.
 
-**Use when:** "does X cause Y", "should we change X to improve Y", drawing conclusions from observational data.
-
-**Sources:** Pearl & Mackenzie (2018)
+**Use when:** "does X cause Y", "should we change X to improve Y", drawing conclusions from observational data. Based on Pearl & Mackenzie (2018).
 
 #### Transitions
 
@@ -92,15 +88,17 @@ These skills focus on *when to stop and think* — they don't manage plans, task
 /plugin install text-utils@jackwillis
 ```
 
-Three skills for getting text in and out of formats without wasting context. Themes are customizable — edit the shipped CSS or drop in your own.
+Three skills for getting text in and out of formats without wasting context. Themes are customizable — edit the shipped CSS or drop in your own. Requires `pandoc`, `weasyprint`, `poppler` (for `pdftotext`). Optional: `tesseract` (OCR), `trafilatura` (article extraction).
 
-**Dependencies:** `pandoc`, `weasyprint`, `poppler` (for `pdftotext`). Optional: `tesseract` (OCR), `trafilatura` (article extraction).
+<details>
+<summary>Install dependencies</summary>
 
 ```bash
 brew install pandoc weasyprint poppler qpdf # core
 brew install tesseract                      # optional: OCR
 pipx install trafilatura                    # optional: article extraction
 ```
+</details>
 
 #### Fetch Markdown
 
@@ -126,8 +124,6 @@ Render markdown to styled PDF using pandoc + weasyprint + CSS. Ships with three 
 
 **Use when:** "make a PDF", "printable version", "export as PDF".
 
-**Requires:** `pandoc`, `weasyprint`
-
 #### Read PDF
 
 ![read-pdf](assets/read-pdf.svg)
@@ -139,17 +135,6 @@ Render markdown to styled PDF using pandoc + weasyprint + CSS. Ships with three 
 Extract text from PDFs. Tries `pdftotext` first (fast, digital PDFs), falls back to OCR via `tesseract` for scanned documents. Detects which is needed automatically.
 
 **Use when:** "read this PDF", "extract text", scanned documents, image-heavy PDFs.
-
-**Requires:** `poppler` (`pdftotext`), optionally `tesseract` for OCR
-
-## References
-
-- Hacking, I. (1983). *Representing and Intervening.*
-- Ashby, W.R. (1956). *An Introduction to Cybernetics.*
-- Conant, R.C. & Ashby, W.R. (1970). "Every good regulator of a system must be a model of that system."
-- Schon, D. (1983). *The Reflective Practitioner.*
-- Argyris, C. & Schon, D. (1978). *Organizational Learning.*
-- Pearl, J. & Mackenzie, D. (2018). *The Book of Why.*
 
 ## License
 
