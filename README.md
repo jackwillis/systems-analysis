@@ -1,27 +1,34 @@
-# Systems Analysis
+# Jack's Claude Code Plugins
 
-**Claude Code plugin that makes your agent think before it acts.**
+A marketplace of Claude Code plugins by [Jack Willis](mailto:jack@attac.us).
+
+## Installation
+
+Add the marketplace, then install any plugin:
+
+```
+/plugin marketplace add https://github.com/jackwillis/claude-plugins.git
+```
+
+Reboot Claude after installing plugins to load new skills.
+
+## Plugins
+
+### systems-analysis
+
+**Makes your agent think before it acts.**
+
+```
+/plugin install systems-analysis@jackwillis
+```
 
 AI coding agents are biased toward action and toward agreement. They'll try a fix before understanding why something broke, add more rules when the problem is that rules can't keep up, or draw causal conclusions from correlations. Worse, [LLMs agree with user framing 88% of the time](https://arxiv.org/abs/2505.13995) — so if you frame the problem wrong, the agent will run with it rather than questioning it.
 
 These are the same mistakes humans make, just faster and more agreeable.
 
-This plugin adds three skills that enforce one shared discipline: **model the system before intervening.**
+This plugin adds three skills that enforce one shared discipline: **model the system before intervening.** Skills activate automatically when Claude detects a matching situation, and can also be invoked directly.
 
-## Installation
-
-```
-/plugin marketplace add https://github.com/jackwillis/claude-plugins.git
-/plugin install systems-analysis@jackwillis
-```
-
-Reboot Claude to load the new skills.
-
-## Skills
-
-Skills activate automatically when Claude detects a matching situation, and can also be invoked directly. They add structure to the agent's reasoning at the moments where unstructured reasoning tends to go wrong.
-
-### Representing and Intervening
+#### Representing and Intervening
 
 > `/representing-and-intervening`
 
@@ -31,7 +38,7 @@ State what you think is happening, predict what you should see, then test one th
 
 **Sources:** Hacking (1983), Schon (1983), Argyris & Schon (1978)
 
-### Requisite Variety
+#### Requisite Variety
 
 > `/requisite-variety`
 
@@ -41,7 +48,7 @@ When a control system keeps failing despite more rules, more alerts, more checks
 
 **Sources:** Ashby (1956), Conant & Ashby (1970)
 
-### Design a Causal Study
+#### Design a Causal Study
 
 > `/design-causal-study`
 
@@ -51,11 +58,11 @@ Before claiming X causes Y, define exactly what you're measuring, draw the causa
 
 **Sources:** Pearl & Mackenzie (2018)
 
-### Transitions
+#### Transitions
 
 Each skill includes transition signals. Debugging may reveal a regulation problem; regulation may need causal evidence; a causal question may turn out to be "why is this behaving this way" — and the skills hand off to each other at those points.
 
-## Works well with Superpowers
+#### Works well with Superpowers
 
 These skills focus on *when to stop and think* — they don't manage plans, tasks, or execution. For that, pair them with [Superpowers](https://github.com/obra/superpowers):
 
@@ -67,7 +74,7 @@ These skills focus on *when to stop and think* — they don't manage plans, task
 /plugin install superpowers@claude-plugins-official
 ```
 
-## References
+#### References
 
 - Hacking, I. (1983). *Representing and Intervening.*
 - Ashby, W.R. (1956). *An Introduction to Cybernetics.*
