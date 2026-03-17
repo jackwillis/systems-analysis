@@ -93,7 +93,15 @@ These skills focus on *when to stop and think* — they don't manage plans, task
 /plugin install text-utils@jackwillis
 ```
 
-Three skills for getting text in and out of formats without wasting context.
+Three skills for getting text in and out of formats without wasting context. Themes are customizable — edit the shipped CSS or drop in your own.
+
+**Dependencies:** `pandoc`, `weasyprint`, `poppler` (for `pdftotext`). Optional: `tesseract` (OCR), `trafilatura` (article extraction).
+
+```bash
+brew install pandoc weasyprint poppler qpdf    # core
+brew install tesseract                          # optional: OCR
+pipx install trafilatura                        # optional: article extraction
+```
 
 #### Fetch Markdown
 
@@ -101,7 +109,7 @@ Three skills for getting text in and out of formats without wasting context.
 /fetch-markdown
 ```
 
-Get clean markdown from a URL. Tries `Accept: text/markdown` header, then a markdown proxy, then local `curl | pandoc` conversion. Uses a fraction of the context that WebFetch needs.
+Get clean markdown from a URL. Tries a markdown proxy, then trafilatura for article extraction, then local pandoc conversion, then lynx as a plaintext fallback. Uses a fraction of the context that WebFetch needs.
 
 **Use when:** fetching web content for analysis, summarization, or reference.
 
@@ -111,7 +119,7 @@ Get clean markdown from a URL. Tries `Accept: text/markdown` header, then a mark
 /markdown-to-pdf
 ```
 
-Render markdown to styled PDF using pandoc + weasyprint + CSS. Ships with a default theme and a double-spaced editing theme. Bring your own CSS for custom styling.
+Render markdown to styled PDF using pandoc + weasyprint + CSS. Ships with three themes (default, editing, correspondence) with cross-platform font stacks. Edit the CSS or drop in your own.
 
 **Use when:** "make a PDF", "printable version", "export as PDF".
 
