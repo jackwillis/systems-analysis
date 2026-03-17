@@ -5,7 +5,7 @@ description: Use when fetching web content for analysis, summarization, or refer
 
 # Fetch Markdown
 
-Get clean markdown from a URL. Uses significantly less context than WebFetch by stripping navigation, scripts, and chrome.
+Get clean markdown from a URL. Uses less context than WebFetch by stripping navigation, scripts, and chrome.
 
 ## Strategy
 
