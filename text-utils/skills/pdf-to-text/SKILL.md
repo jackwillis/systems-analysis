@@ -1,9 +1,9 @@
 ---
-name: read-pdf
+name: pdf-to-text
 description: Use when extracting text from a PDF file, especially when the built-in PDF reader is insufficient or the PDF is too large. Triggers on "read this PDF", "extract text from PDF", "what does this PDF say", scanned documents, image-heavy PDFs.
 ---
 
-# Read PDF
+# PDF to Text
 
 Extract text from PDF files. Try the fast path first, fall back to OCR for scanned documents.
 

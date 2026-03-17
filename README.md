@@ -133,13 +133,13 @@ Render markdown to styled PDF using pandoc + weasyprint + CSS. Ships with three 
 
 **Use when:** "make a PDF", "printable version", "export as PDF".
 
-#### Read PDF
+#### PDF to Text
 
 ```
-/read-pdf
+/pdf-to-text
 ```
 
-<img src="assets/read-pdf.svg" align="left" width="120">
+<img src="assets/pdf-to-text.svg" align="left" width="120">
 
 Extract text from PDFs. Tries `pdftotext` first (fast, digital PDFs), falls back to OCR via `tesseract` for scanned documents. Detects which is needed automatically.
 
