@@ -34,7 +34,7 @@ This plugin adds three skills that enforce one shared discipline: **model the sy
 /representing-and-intervening
 ```
 
-![representing-and-intervening](assets/representing-and-intervening.svg)
+<img src="assets/representing-and-intervening.svg" align="left" width="120">
 
 State what you think is happening, predict what you should see, then test one thing at a time. Forces you to enumerate available tests (script runner, spec, logs, query inspection) before grabbing the first one. When a prediction fails, asks whether the model is structurally wrong or just miscalibrated — the difference between rethinking your approach and tuning a parameter.
 
@@ -46,8 +46,7 @@ State what you think is happening, predict what you should see, then test one th
 /requisite-variety
 ```
 
-![requisite-variety](assets/requisite-variety.svg)
-
+<img src="assets/requisite-variety.svg" align="left" width="120">
 
 When a control system keeps failing despite more rules, more alerts, more checks — this skill asks whether the controller has enough response variety to match its disturbances, whether it contains a model of what it's controlling, and whether you can find structure in the problem that makes it tractable. Three principles applied in order: capacity, then structure, then constraints.
 
@@ -59,7 +58,7 @@ When a control system keeps failing despite more rules, more alerts, more checks
 /design-causal-study
 ```
 
-![design-causal-study](assets/design-causal-study.svg)
+<img src="assets/design-causal-study.svg" align="left" width="120">
 
 Before claiming X causes Y, define exactly what you're measuring, draw the causal structure, and check whether the data can actually answer the question. Seven steps that prevent the most common errors: adjusting for variables on the causal path, conditioning on colliders, and skipping the estimand entirely.
 
@@ -104,11 +103,11 @@ pipx install trafilatura                    # optional: article extraction
 
 #### Fetch Markdown
 
-![fetch-markdown](assets/fetch-markdown.svg)
-
 ```
 /fetch-markdown
 ```
+
+<img src="assets/fetch-markdown.svg" align="left" width="120">
 
 Get clean markdown from a URL. Tries a markdown proxy, then trafilatura for article extraction, then local pandoc conversion, then lynx as a plaintext fallback. Uses significantly less context than WebFetch.
 
@@ -116,11 +115,11 @@ Get clean markdown from a URL. Tries a markdown proxy, then trafilatura for arti
 
 #### Markdown to PDF
 
-![markdown-to-pdf](assets/markdown-to-pdf.svg)
-
 ```
 /markdown-to-pdf
 ```
+
+<img src="assets/markdown-to-pdf.svg" align="left" width="120">
 
 Render markdown to styled PDF using pandoc + weasyprint + CSS. Ships with three themes (default, editing, correspondence) with cross-platform font stacks. Edit the CSS or drop in your own.
 
@@ -132,7 +131,7 @@ Render markdown to styled PDF using pandoc + weasyprint + CSS. Ships with three 
 /read-pdf
 ```
 
-![read-pdf](assets/read-pdf.svg)
+<img src="assets/read-pdf.svg" align="left" width="120">
 
 Extract text from PDFs. Tries `pdftotext` first (fast, digital PDFs), falls back to OCR via `tesseract` for scanned documents. Detects which is needed automatically.
 
