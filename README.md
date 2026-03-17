@@ -12,6 +12,12 @@ Model the system before intervening. All three skills enforce this in different 
 | **requisite-variety** | Regulation and control | Name D/R/T/E/η. Check variety, then model, then constraints. |
 | **design-causal-study** | Causal claims | Define estimand → Draw DAG → Check identifiability. No study without structure. |
 
+## Install
+
+```
+/plugin marketplace add https://github.com/jackwillis/systems-analysis.git
+```
+
 ## Skills
 
 ### representing-and-intervening
