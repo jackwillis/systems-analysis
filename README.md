@@ -10,13 +10,13 @@ Add the marketplace, then install any plugin:
 
 Reboot Claude after installing plugins to load new skills.
 
-<img src="assets/header.svg" alt="Claude Code Plugins" />
+![Claude Code Plugins](assets/header.svg)
 
 ## Plugins
 
 ### Systems Analysis
 
-<img src="assets/systems-analysis.svg" alt="systems-analysis" />
+![systems-analysis](assets/systems-analysis.svg)
 
 ```
 /plugin install systems-analysis@jackwillis
@@ -89,7 +89,7 @@ These skills focus on *when to stop and think* — they don't manage plans, task
 
 ### Text Utils
 
-<img src="assets/text-utils.svg" alt="text-utils" />
+![text-utils](assets/text-utils.svg)
 
 ```
 /plugin install text-utils@jackwillis
