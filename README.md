@@ -7,7 +7,7 @@ Plugins for Claude Code that make Claude stop and think before acting. Each plug
 | Skill | What it does | Trigger |
 |-------|-------------|---------|
 | `/representing-and-intervening` | Write down your model before debugging | "why is this happening", unexplained behavior |
-| `/requisite-variety` | Check if your controller can match its disturbances | regulation failure, alert fatigue |
+| `/requisite-variety` | Check if your defenses can actually keep up with what they're defending against | regulation failure, alert fatigue |
 | `/design-causal-study` | Verify the data supports the causal claim | "does X cause Y", observational data |
 | `/frame-problem` | Surface assumptions that may have gone stale | stale state, inherited framing |
 | `/fetch-markdown` | Get clean markdown from a URL | fetching web content for analysis |
@@ -26,7 +26,7 @@ Restart Claude Code after installing plugins to load new skills.
 
 ## Plugins
 
-### Systems Analysis
+### Systems Analysis (beta)
 
 ```
 /plugin install systems-analysis@jackwillis
@@ -95,7 +95,7 @@ Each skill includes transition signals that hand off to the others when the situ
 
 </details>
 
-### Text Utils
+### Text Utils (alpha)
 
 ```
 /plugin install text-utils@jackwillis
