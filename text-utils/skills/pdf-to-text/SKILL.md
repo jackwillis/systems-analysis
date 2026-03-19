@@ -26,15 +26,19 @@ pdftotext -layout "$INPUT" -
 If pdftotext returns empty or garbage, the PDF is scanned images. Use ocrmypdf to add a text layer, then extract:
 
 ```bash
-ocrmypdf --skip-text "$INPUT" /tmp/ocr-output.pdf
-pdftotext /tmp/ocr-output.pdf -
+OCR_OUT=$(mktemp /tmp/ocr-XXXXXX.pdf)
+ocrmypdf --skip-text "$INPUT" "$OCR_OUT"
+pdftotext "$OCR_OUT" -
+rm "$OCR_OUT"
 ```
 
 Or OCR individual pages directly:
 
 ```bash
-pdftoppm "$INPUT" /tmp/page -png
-for f in /tmp/page-*.png; do tesseract "$f" stdout; done
+PAGE_DIR=$(mktemp -d /tmp/pages-XXXXXX)
+pdftoppm "$INPUT" "$PAGE_DIR/page" -png
+for f in "$PAGE_DIR"/page-*.png; do tesseract "$f" stdout; done
+rm -r "$PAGE_DIR"
 ```
 
 ### 3. Specific pages
@@ -42,8 +46,10 @@ for f in /tmp/page-*.png; do tesseract "$f" stdout; done
 Extract a page range before processing:
 
 ```bash
-qpdf "$INPUT" --pages . 5-10 -- /tmp/subset.pdf
-pdftotext /tmp/subset.pdf -
+SUBSET=$(mktemp /tmp/subset-XXXXXX.pdf)
+qpdf "$INPUT" --pages . 5-10 -- "$SUBSET"
+pdftotext "$SUBSET" -
+rm "$SUBSET"
 ```
 
 ### How to tell if OCR is needed
@@ -65,10 +71,14 @@ If the word count is near zero for a multi-page document, it's scanned.
 
 ## Requirements
 
-- `pdftotext` (from poppler: `brew install poppler`)
-- `tesseract` (for OCR: `brew install tesseract`)
-- `ocrmypdf` (optional, wraps tesseract: `pipx install ocrmypdf`)
-- `qpdf` (for page extraction: `brew install qpdf`)
+- `pdftotext` (from poppler)
+- `tesseract` (for OCR)
+- `ocrmypdf` (optional, wraps tesseract)
+- `qpdf` (for page extraction)
+
+**macOS:** `brew install poppler tesseract qpdf` and optionally `pipx install ocrmypdf`
+
+**Debian/Ubuntu:** `sudo apt install poppler-utils tesseract-ocr qpdf` and optionally `pipx install ocrmypdf`
 
 ## Red Flags
 

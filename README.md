@@ -26,7 +26,7 @@ Restart Claude Code after installing plugins to load new skills.
 
 ## Plugins
 
-### Systems Analysis (beta)
+### Systems Analysis
 
 ```
 /plugin install systems-analysis@jackwillis
@@ -93,7 +93,7 @@ Each skill can hand off to the others when the situation shifts. Debugging may r
 
 </details>
 
-### Text Utils (alpha)
+### Text Utils
 
 ```
 /plugin install text-utils@jackwillis
@@ -122,7 +122,7 @@ pipx install trafilatura                              # optional: article extrac
 
 #### Fetch Markdown
 
-Get clean markdown from a URL. Tries several methods in order: a markdown proxy, trafilatura for article extraction, local pandoc conversion, and lynx as a plain-text fallback. Uses much less context than WebFetch.
+Get clean markdown from a URL. Tries two independent markdown proxies, then trafilatura for article extraction, local pandoc conversion, and lynx as a plain-text fallback. Uses much less context than WebFetch.
 
 <img src="assets/fetch-markdown.svg" width="120">
 

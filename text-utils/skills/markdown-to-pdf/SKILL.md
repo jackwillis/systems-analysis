@@ -36,7 +36,11 @@ To customize: read a theme file, make the requested changes, and write it back o
 ## Requirements
 
 - `pandoc`
-- `weasyprint` (`brew install weasyprint` or `pip install weasyprint`)
+- `weasyprint`
+
+**macOS:** `brew install pandoc weasyprint`
+
+**Debian/Ubuntu:** `sudo apt install pandoc weasyprint`
 
 ## Red Flags
 
