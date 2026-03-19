@@ -34,41 +34,41 @@ Restart Claude Code after installing plugins to load new skills.
 
 No external dependencies — works with any Claude Code installation.
 
-<img src="assets/systems-analysis.svg" width="120">
-
 AI coding agents are biased toward action. They'll try a fix before understanding why something broke, add more rules when the problem is that rules can't keep up, or draw causal conclusions from correlations. These are the same mistakes humans make, just faster.
+
+<img src="assets/systems-analysis.svg" width="120">
 
 This plugin adds four skills that enforce one shared discipline: **model the system before intervening.** Skills activate automatically when Claude detects a matching situation, and can also be invoked directly.
 
 #### Representing and Intervening
 
-<img src="assets/representing-and-intervening.svg" width="120">
-
 Stop debugging by trial and error. This skill makes you write down what you think is happening and what you expect to see before you touch anything — so when a test surprises you, you know whether your mental model is wrong or just needs tuning.
+
+<img src="assets/representing-and-intervening.svg" width="120">
 
 **Use when:** "why is this happening", "help me debug", unexplained gaps between expected and observed behavior. Based on Hacking (1983), Schon (1983), Argyris & Schon (1978).
 
 #### Requisite Variety
 
-<img src="assets/requisite-variety.svg" width="120">
-
 Stop adding more rules when rules can't keep up. This skill checks whether your controller actually has enough response variety to match its disturbances, whether it contains a model of what it's regulating, and whether there's structure in the problem you can exploit instead of brute-forcing.
+
+<img src="assets/requisite-variety.svg" width="120">
 
 **Use when:** "why can't we control this", regulation failure, alert fatigue, whack-a-mole against adaptive adversaries. Based on Ashby (1956), Conant & Ashby (1970).
 
 #### Design a Causal Study
 
-<img src="assets/design-causal-study.svg" width="120">
-
 Stop drawing causal conclusions from correlations. Seven steps that make you define what you're measuring, draw the causal structure, and check whether the data can actually answer the question — before you adjust for the wrong variables or condition on a collider.
+
+<img src="assets/design-causal-study.svg" width="120">
 
 **Use when:** "does X cause Y", "should we change X to improve Y", drawing conclusions from observational data. Based on Pearl & Mackenzie (2018).
 
 #### The Frame Problem
 
-<img src="assets/frame-problem.svg" width="120">
-
 Stop acting on assumptions that may no longer hold. Every action assumes things that stay the same — this skill makes you name those assumptions and check whether they're still true. Catches three failure modes from Dennett's robot thought experiment: ignoring side effects, considering everything, and getting stuck deciding what's relevant.
+
+<img src="assets/frame-problem.svg" width="120">
 
 **Use when:** stale state, inherited problem framing, confidence without re-verification, any gap between when information was gathered and when it's being used. Based on Fodor (1987), Dennett (1984), Hayes (1973).
 
@@ -77,47 +77,6 @@ Stop acting on assumptions that may no longer hold. Every action assumes things 
 Each skill includes transition signals that hand off to the others when the situation shifts. Debugging may reveal a regulation problem; regulation may need causal evidence; a causal question may turn out to be "why is this behaving this way"; and at any point, assumptions may have gone stale without being re-examined. The frame-problem skill cuts across the other three — it fires whenever an agent's implicit assumptions about what hasn't changed might be wrong, regardless of which skill is currently active.
 
 > **Pairs well with [Superpowers](https://github.com/obra/superpowers)** (`/plugin install superpowers@claude-plugins-official`) — these skills focus on *when to stop and think*, not on managing plans or execution. Superpowers handles brainstorming, planning, and executing with review checkpoints; systems-analysis skills pressure-test the thinking at each stage.
-
-
-### Text Utils
-
-```
-/plugin install text-utils@jackwillis
-```
-
-<img src="assets/text-utils.svg" width="120">
-
-Three skills for getting text in and out of formats without wasting context. Themes are customizable — edit the shipped CSS or drop in your own. Requires `pandoc`, `weasyprint`, `poppler` (for `pdftotext`). Optional: `tesseract` (OCR), `trafilatura` (article extraction).
-
-```bash
-brew install pandoc weasyprint poppler qpdf # core
-brew install tesseract                      # optional: OCR
-pipx install trafilatura                    # optional: article extraction
-```
-
-#### Fetch Markdown
-
-<img src="assets/fetch-markdown.svg" width="120">
-
-Get clean markdown from a URL. Tries a markdown proxy, then trafilatura for article extraction, then local pandoc conversion, then lynx as a plaintext fallback. Uses significantly less context than WebFetch.
-
-**Use when:** fetching web content for analysis, summarization, or reference.
-
-#### Markdown to PDF
-
-<img src="assets/markdown-to-pdf.svg" width="120">
-
-Render markdown to styled PDF using pandoc + weasyprint + CSS. Ships with three themes (default, editing, correspondence) with cross-platform font stacks. Edit the CSS or drop in your own.
-
-**Use when:** "make a PDF", "printable version", "export as PDF".
-
-#### PDF to Text
-
-<img src="assets/pdf-to-text.svg" width="120">
-
-Extract text from PDFs. Tries `pdftotext` first (fast, digital PDFs), falls back to OCR via `tesseract` for scanned documents. Detects which is needed automatically.
-
-**Use when:** "read this PDF", "extract text", scanned documents, image-heavy PDFs.
 
 <details>
 <summary><strong>Sources</strong></summary>
@@ -135,6 +94,46 @@ Extract text from PDFs. Tries `pdftotext` first (fast, digital PDFs), falls back
 - Shanahan, M. (1997). *Solving the Frame Problem*. MIT Press.
 
 </details>
+
+### Text Utils
+
+```
+/plugin install text-utils@jackwillis
+```
+
+Three skills for getting text in and out of formats without wasting context. Themes are customizable — edit the shipped CSS or drop in your own. Requires `pandoc`, `weasyprint`, `poppler` (for `pdftotext`). Optional: `tesseract` (OCR), `trafilatura` (article extraction).
+
+```bash
+brew install pandoc weasyprint poppler qpdf # core
+brew install tesseract                      # optional: OCR
+pipx install trafilatura                    # optional: article extraction
+```
+
+<img src="assets/text-utils.svg" width="120">
+
+#### Fetch Markdown
+
+Get clean markdown from a URL. Tries a markdown proxy, then trafilatura for article extraction, then local pandoc conversion, then lynx as a plaintext fallback. Uses significantly less context than WebFetch.
+
+<img src="assets/fetch-markdown.svg" width="120">
+
+**Use when:** fetching web content for analysis, summarization, or reference.
+
+#### Markdown to PDF
+
+Render markdown to styled PDF using pandoc + weasyprint + CSS. Ships with three themes (default, editing, correspondence) with cross-platform font stacks. Edit the CSS or drop in your own.
+
+<img src="assets/markdown-to-pdf.svg" width="120">
+
+**Use when:** "make a PDF", "printable version", "export as PDF".
+
+#### PDF to Text
+
+Extract text from PDFs. Tries `pdftotext` first (fast, digital PDFs), falls back to OCR via `tesseract` for scanned documents. Detects which is needed automatically.
+
+<img src="assets/pdf-to-text.svg" width="120">
+
+**Use when:** "read this PDF", "extract text", scanned documents, image-heavy PDFs.
 
 ## License
 
