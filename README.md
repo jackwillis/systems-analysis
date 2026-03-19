@@ -1,8 +1,8 @@
 # Jack's Claude Code Plugins
 
-![Claude Code Plugins](assets/header.svg)
+Make Claude stop and think before acting. These plugins add skills that trigger automatically when Claude detects a matching situation, or can be called directly with slash commands. `systems-analysis` is for disciplined thinking, `text-utils` for getting text in and out of formats.
 
-Plugins for Claude Code that make Claude stop and think before acting. Each plugin adds skills that trigger automatically when Claude detects a matching situation, or can be called directly with slash commands. Two plugins: one for disciplined thinking, one for getting text in and out of formats.
+![Claude Code Plugins](assets/header.svg)
 
 | Skill | What it does | Trigger |
 |-------|-------------|---------|
