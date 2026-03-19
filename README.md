@@ -1,6 +1,6 @@
 # Jack's Claude Code Plugins
 
-Make Claude stop and think before acting. These plugins add skills that trigger automatically when Claude detects a matching situation, or can be called directly with slash commands. `systems-analysis` is for disciplined thinking, `text-utils` for getting text in and out of formats.
+**Make Claude stop and think before acting.** These plugins add skills that trigger automatically when Claude detects a matching situation, or can be called directly with slash commands. `systems-analysis` is for disciplined thinking, `text-utils` for getting text in and out of formats.
 
 ![Claude Code Plugins](assets/header.svg)
 
@@ -38,7 +38,7 @@ AI coding agents are biased toward action. They'll try a fix before understandin
 
 <img src="assets/systems-analysis.svg" width="120">
 
-This plugin adds four skills that enforce one shared discipline: **model the system before intervening.** Skills activate automatically when Claude detects a matching situation, and can also be invoked directly.
+This plugin adds four skills that come back to one question: **do you understand the system you're about to change?** Skills activate automatically when Claude detects a matching situation, and can also be called directly.
 
 #### Representing and Intervening
 
@@ -66,7 +66,7 @@ Stop assuming that correlation means causation. Seven steps that make you define
 
 #### The Frame Problem
 
-Stop acting on assumptions that may no longer hold. Every action assumes things that stay the same — this skill makes you name those assumptions and check whether they're still true. Catches three failure modes from Dennett's robot thought experiment: ignoring side effects, considering everything, and getting stuck deciding what's relevant.
+Stop acting on assumptions that may no longer hold. Every action assumes things that stay the same — this skill makes you name those assumptions and check whether they're still true. Catches three ways this goes wrong: ignoring side effects, trying to consider everything, and getting stuck deciding what's relevant.
 
 <img src="assets/frame-problem.svg" width="120">
 
@@ -76,7 +76,7 @@ Stop acting on assumptions that may no longer hold. Every action assumes things 
 
 Each skill can hand off to the others when the situation shifts. Debugging may reveal a control problem; a control problem may need causal evidence; a causal question may turn out to be "why is this behaving this way." The frame-problem skill cuts across the other three — it fires whenever assumptions about what hasn't changed might be wrong, no matter which skill is active.
 
-> **Pairs well with [Superpowers](https://github.com/obra/superpowers)** (`/plugin install superpowers@claude-plugins-official`) — these skills focus on *when to stop and think*, not on managing plans or execution. Superpowers handles brainstorming, planning, and executing with review checkpoints; systems-analysis skills pressure-test the thinking at each stage.
+> **Pairs well with [Superpowers](https://github.com/obra/superpowers)** (`/plugin install superpowers@claude-plugins-official`) — these skills focus on *when to stop and think*, not on managing plans or execution. Superpowers handles brainstorming, planning, and executing with review checkpoints; systems-analysis skills question the thinking at each stage.
 
 <details>
 <summary><strong>Sources</strong></summary>
