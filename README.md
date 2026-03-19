@@ -1,6 +1,6 @@
 # Jack's Claude Code Plugins
 
-**Make Claude stop and think before acting.** These plugins add skills that trigger automatically when Claude detects a matching situation, or can be called directly with slash commands. `systems-analysis` is for disciplined thinking, `text-utils` for getting text in and out of formats.
+**Make Claude stop and think before acting.** These plugins add skills that trigger automatically when Claude detects a matching situation, or can be called directly with slash commands. **systems-analysis** is for disciplined thinking, **text-utils** for getting text in and out of formats.
 
 ![Claude Code Plugins](assets/header.svg)
 
@@ -31,8 +31,6 @@ Restart Claude Code after installing plugins to load new skills.
 ```
 /plugin install systems-analysis@jackwillis
 ```
-
-No external dependencies — works with any Claude Code installation.
 
 AI coding agents are biased toward action. They'll try a fix before understanding why something broke, add more rules when the problem is that rules can't keep up, or assume one thing causes another just because they happen together. These are the same mistakes humans make, just faster.
 
@@ -103,10 +101,21 @@ Each skill can hand off to the others when the situation shifts. Debugging may r
 
 Three skills for getting text in and out of formats without wasting context. Themes are customizable — edit the shipped CSS or drop in your own. Requires `pandoc`, `weasyprint`, `poppler` (for `pdftotext`). Optional: `tesseract` (OCR), `trafilatura` (article extraction).
 
+#### macOS requirements
+
 ```bash
 brew install pandoc weasyprint poppler qpdf # core
 brew install tesseract                      # optional: OCR
 pipx install trafilatura                    # optional: article extraction
+```
+
+#### Debian requirements
+
+```bash
+sudo apt update
+sudo apt install pandoc weasyprint poppler-utils qpdf # core
+sudo apt install tesseract-ocr                        # optional: OCR
+pipx install trafilatura                              # optional: article extraction
 ```
 
 <img src="assets/text-utils.svg" width="120">
