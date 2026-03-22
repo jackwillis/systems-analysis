@@ -33,26 +33,22 @@ Each robot fails by trying to *solve* the frame problem rather than *manage* it.
 
 This skill has no clean stopping rule. Fodor: "The frame problem is just Hamlet's problem viewed from an engineer's perspective." You stop checking when the expected cost of further checking exceeds the expected cost of being wrong. **Say that tradeoff out loud** — don't just silently stop.
 
-## Red Flags
+## Self-Checks
 
-- Reasoning from information gathered many turns ago without re-checking
-- "I already know what's in that file" (do you?)
-- Accepting the user's diagnosis without examining the frame it assumes
-- Confidence that a prior action worked without verifying
-- "Nothing else changed" — the universal frame assumption, almost never explicitly checked
-- Making a second fix to something that "should have worked the first time" (your frame may be wrong, not your fix)
-
-## Rationalizations
-
-| Thought | Reality |
-|---------|---------|
-| "I just read that file" | How many turns ago? What has the user done since? |
-| "That's not relevant" | Relevance is context-dependent and you chose the context. Check the choice. |
-| "I already checked" | You checked under a frame. Has the frame changed? |
-| "The user said it's X" | Agreement is not diagnosis. The user's frame is a frame too. |
-| "Let me be thorough and check everything" | R1D1. You can't check everything. Name what matters most and why. |
-| "This is too simple to have side effects" | R1. Simplicity of your model ≠ simplicity of the system. |
-| "I'll verify after" | Post-hoc verification confirms your frame; it doesn't test it. |
+| When you notice... | Do this |
+|---------------------|---------|
+| "I just read that file" | Check: how many turns ago? What has the user done since? Re-read if >2 turns. |
+| "That's not relevant" | Pause: you chose what counts as relevant. Name the choice and check it. |
+| "I already checked" | Ask: checked under which frame? Has anything changed since? |
+| "The user said it's X" | Treat as hypothesis, not diagnosis. The user's frame is a frame too. |
+| "Let me be thorough and check everything" | Stop — that's R1D1. Name the 2-3 things that matter most and why. |
+| "This is too simple to have side effects" | That's R1. Check: simplicity of your model ≠ simplicity of the system. |
+| "I'll verify after" | Verify now. Post-hoc verification confirms your frame; it doesn't test it. |
+| Reasoning from information gathered many turns ago | Re-read the files before continuing. |
+| Accepting the user's diagnosis without examining it | Name what the user is assuming. Check whether that assumption holds. |
+| Confidence that a prior action worked | Verify it worked. Don't assume. |
+| "Nothing else changed" | Name what you're assuming didn't change. Check the most likely one. |
+| A second fix for something that "should have worked" | Your frame may be wrong, not your fix. Return to Name the Frame. |
 
 ## Examples
 
