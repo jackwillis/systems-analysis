@@ -1,20 +1,33 @@
-# Jack's Claude Code Plugins
+# Systems Analysis for Claude Code
 
-**Make Claude stop and think before acting.** These plugins add skills that trigger automatically when Claude detects a matching situation, or can be called directly with slash commands.
+**Claude Code plugins that make the agent stop and think before changing your code.**
 
-**systems-analysis** is for disciplined thinking, **text-utils** for getting text in and out of formats.
+> **Experimental.** These plugins work but are under active development. Expect rough edges.
 
 ![Claude Code Plugins](assets/header.svg)
 
-| Skill | What it does | Trigger |
-|-------|-------------|---------|
-| `/representing-and-intervening` | Write down your model before debugging | "why is this happening", unexplained behavior |
-| `/requisite-variety` | Check if your defenses can actually keep up with what they're defending against | regulation failure, alert fatigue |
-| `/causal-analysis` | Verify the data supports a cause-and-effect claim | "does X cause Y", observational data |
-| `/frame-problem` | Surface assumptions that may have gone stale | stale state, inherited framing |
-| `/fetch-markdown` | Get clean markdown from a URL | fetching web content for analysis |
-| `/markdown-to-pdf` | Render markdown to styled PDF | "make a PDF", "export as PDF" |
-| `/pdf-to-text` | Extract text from PDFs (digital or scanned) | "read this PDF", scanned documents |
+AI coding agents are biased toward action. They'll try a fix before understanding why something broke, add more rules when the problem is that rules can't keep up, or assume one thing causes another just because they happen together. These are the same mistakes humans make, just faster.
+
+This plugin adds four skills that come back to one question: **do you understand the system you're about to change?** Skills activate automatically when Claude detects a matching situation, and can also be called directly with slash commands.
+
+### What it looks like
+
+You tell Claude a test passes locally but fails 30% of the time in CI. Without this plugin, it guesses "race condition" and starts adding sleep calls and retries.
+
+With the plugin installed, Claude states two competing models — missing `ORDER BY` (CI uses a parallel test runner) vs. actual race condition — and picks the cheapest test that distinguishes them: check CI config for a parallel runner. Confirms it's parallel. Adds `ORDER BY`. Runs 50 iterations. All green.
+
+The difference: instead of guessing and retrying, Claude writes down what it thinks is happening, names what would prove it wrong, and tests that first.
+
+| Skill | Command | What it does | Auto-triggers on |
+|-------|---------|-------------|-----------------|
+| Debug with a model | `/representing-and-intervening` | Write down your model before debugging | "why is this happening", unexplained behavior |
+| Check your controls | `/requisite-variety` | Check if your defenses can keep up with what they're defending against | regulation failure, alert fatigue |
+| Verify causal claims | `/causal-analysis` | Verify the data supports a cause-and-effect claim | "does X cause Y", observational data |
+| Surface stale assumptions | `/frame-problem` | Name assumptions that may no longer hold | stale state, inherited framing |
+| Fetch markdown | `/fetch-markdown` | Get clean markdown from a URL | fetching web content |
+| Markdown to PDF | `/markdown-to-pdf` | Render markdown to styled PDF | "make a PDF", "export as PDF" |
+| PDF to text | `/pdf-to-text` | Extract text from PDFs (digital or scanned) | "read this PDF", scanned documents |
+| Riff | `/riff` | Generate name/phrase variations via diverge/converge rounds | Invoke explicitly |
 
 ## Installation
 
@@ -34,41 +47,69 @@ Restart Claude Code after installing plugins to load new skills.
 /plugin install systems-analysis@jackwillis
 ```
 
-AI coding agents are biased toward action. They'll try a fix before understanding why something broke, add more rules when the problem is that rules can't keep up, or assume one thing causes another just because they happen together. These are the same mistakes humans make, just faster.
+#### Debug with a Model
+*`/representing-and-intervening` — Hacking (1983), Schon (1983), Argyris & Schon (1978)*
 
-This plugin adds four skills that come back to one question: **do you understand the system you're about to change?** Skills activate automatically when Claude detects a matching situation, and can also be called directly.
-
-#### Representing and Intervening
-
-Stop debugging by trial and error. This skill makes you write down what you think is happening and what you expect to see before you touch anything — so when a test surprises you, you know whether your mental model is wrong or just needs tuning.
+Stop debugging by trial and error. This skill makes Claude write down what it thinks is happening and what it expects to see before touching anything — so when a test surprises you, you know whether the mental model is wrong or just needs tuning.
 
 <img src="assets/representing-and-intervening.svg" width="120">
 
-**Use when:** "why is this happening", "help me debug", unexplained gaps between expected and observed behavior. Based on Hacking (1983), Schon (1983), Argyris & Schon (1978).
+<details>
+<summary>Example: API latency spike</summary>
 
-#### Requisite Variety
+You report that an API endpoint got slow after a deploy. Without the skill, Claude assumes "N+1 query" and starts adding eager loading.
 
-Stop adding more rules when rules can't keep up. This skill checks whether your controls can actually handle the range of problems they'll face, whether they reflect how the system actually works, and whether there's structure in the problem you can use instead of brute-forcing it.
+With the skill, Claude states two competing models — N+1 queries vs. an index that no longer fits in memory — and identifies a test that distinguishes them: enable query logging and compare a minimal request to a heavy one. If it's N+1, the heavy request should have many more queries. It does. Model confirmed. Fix: batch load with `WHERE id IN (...)`.
+
+</details>
+
+#### Check Your Controls
+*`/requisite-variety` — Ashby (1956), Conant & Ashby (1970)*
+
+Stop adding more rules when rules can't keep up. This skill checks whether your controls can actually handle the range of problems they'll face, whether they model how the system actually works, and whether there's structure in the problem you can exploit instead of brute-forcing it.
 
 <img src="assets/requisite-variety.svg" width="120">
 
-**Use when:** "why can't we control this", alert fatigue, playing whack-a-mole with problems that keep adapting. Based on Ashby (1956), Conant & Ashby (1970).
+<details>
+<summary>Example: Alert fatigue</summary>
 
-#### Causal Analysis
+An SRE team has 400+ alert rules but 95% are false positives. They want more precise rules.
 
-Stop assuming that correlation means causation. Whether you're designing a study or auditing someone else's causal reasoning, this skill makes you place claims on Pearl's causal ladder, draw the causal structure, and check whether the data can actually answer the question.
+With the skill, Claude counts the disturbance variety (47 distinct root cause categories in 90 days) vs. the regulator's effective variety (15 — one threshold per metric, not 400). The gap is structural: more rules can't close it. 80% of false positives come from three predictable patterns (deploy windows, autoscaler ramps, noisy dependency checks). Instead of more rules, Claude recommends consolidating to ~20 SLO-based alerts with deployment context — reducing the problem to something the regulator can actually handle.
+
+</details>
+
+#### Verify Causal Claims
+*`/causal-analysis` — Pearl & Mackenzie (2018)*
+
+Stop assuming that correlation means causation. Whether you're designing a study or auditing someone else's causal reasoning, this skill makes Claude place claims on Pearl's causal ladder, draw the causal structure, and check whether the data can actually answer the question.
 
 <img src="assets/causal-analysis.svg" width="120">
 
-**Use when:** "does X cause Y", "should we change X to improve Y", drawing conclusions from observational data. Based on Pearl & Mackenzie (2018).
+<details>
+<summary>Example: Do push notifications improve retention?</summary>
 
-#### The Frame Problem
+Product sees that users who receive push notifications have 20% higher 30-day retention. They want to send more notifications.
 
-Stop acting on assumptions that may no longer hold. Every action assumes things that stay the same — this skill makes you name those assumptions and check whether they're still true. Catches three ways this goes wrong: ignoring side effects, trying to consider everything, and getting stuck deciding what's relevant.
+With the skill, Claude places the claim on Pearl's ladder: the question is interventional (Rung 2 — "what happens if we send more?") but the evidence is observational (Rung 1 — "users who get notifications also retain"). It draws the causal structure and identifies the confounder: notifications are targeted at already-engaged users. The 20% lift might just be engagement, not notifications. Claude recommends a randomized holdout test (withhold notifications from 10% of eligible users for 30 days) instead of shipping more notifications based on confounded data.
+
+</details>
+
+#### Surface Stale Assumptions
+*`/frame-problem` — Fodor (1987), Dennett (1984), Hayes (1973)*
+
+Stop acting on assumptions that may no longer hold. Every action assumes things that stay the same — this skill makes Claude name those assumptions and check whether they're still true. It catches three failure modes: ignoring side effects, trying to consider everything, and getting stuck deciding what's relevant.
 
 <img src="assets/frame-problem.svg" width="120">
 
-**Use when:** stale state, acting on someone else's problem framing without questioning it, any gap between when you gathered information and when you're using it. Based on Fodor (1987), Dennett (1984), Hayes (1973).
+<details>
+<summary>Example: The ticket that solved itself</summary>
+
+A two-sprint-old ticket says "Implement rate limiting on /export — CPU spikes from too many large exports." Claude is about to build a rate limiter.
+
+With the skill, Claude checks freshness: the ticket is two sprints old. Since then, the team migrated exports to async job processing. Has anyone checked whether the CPU spike still happens? No. Claude checks monitoring — CPU spikes stopped after the migration. The ticket is obsolete. A rate limiter would add complexity for a problem that no longer exists.
+
+</details>
 
 #### Transitions
 
@@ -142,6 +183,12 @@ Extract text from PDFs. Tries `pdftotext` first (fast, digital PDFs), falls back
 <img src="assets/pdf-to-text.svg" width="120">
 
 **Use when:** "read this PDF", "extract text", scanned documents, image-heavy PDFs.
+
+#### Riff
+
+Generate variations on a name, title, phrase, or sentence by running interleaved diverge/converge rounds. Prevents settling on the first decent option by forcing multiple generation passes with selection steps in between. Choose small (3-5 finalists), medium (6-10), or large (11-20).
+
+**Use when:** naming things, exploring phrasings, generating title options. Invoke explicitly with `/riff`.
 
 ## License
 

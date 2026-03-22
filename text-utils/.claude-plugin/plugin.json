@@ -1,7 +1,7 @@
 {
   "name": "text-utils",
-  "version": "0.3.0",
-  "description": "Efficient text extraction and format conversion: fetch markdown from URLs, render markdown to PDF, extract text from PDFs.",
+  "version": "0.4.0",
+  "description": "Efficient text extraction and format conversion: fetch markdown from URLs, render markdown to PDF, extract text from PDFs, generate name/phrase variations.",
   "author": {
     "name": "Jack Willis",
     "email": "jack@attac.us"
