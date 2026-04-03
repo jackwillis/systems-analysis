@@ -7,6 +7,10 @@ description: Use when reasoning or acting on assumptions that may no longer hold
 
 You cannot act or reason without assuming a frame — things you take to stay the same. The frame problem has no general solution (Fodor, 1987). This skill forces you to make frame assumptions explicit, which makes them auditable. An implicit frame can't be checked. An explicit one can. Sources: Fodor (1987), Dennett (1984), Hayes (1973).
 
+## Proportionality
+
+Not every action needs a frame audit. If the information is fresh, the scope is narrow, and you can name your key assumption in one sentence — do that and proceed. The discipline is *noticing* you have a frame (Fodor), not exhaustively cataloguing it. Scale the checking to the cost of the assumption being wrong.
+
 ## Four Actions
 
 Apply in order when you suspect your frame may be wrong:
@@ -18,6 +22,8 @@ Apply in order when you suspect your frame may be wrong:
 | **Check Scope** | Am I solving the right problem? | The frame includes the problem definition itself. If the user says "it's a caching issue," that's a frame. The most consequential assumption is often which problem you're solving, not how. |
 | **Name the Blind Spots** | What kind of change would my current vocabulary not let me notice? | Your ontology determines what changes are visible to you. This is the hardest action — an admission of bounded rationality, stated out loud. |
 | **Rate Confidence** | What part of this frame am I least confident about? | Name it. That's where to direct verification effort — and where to warn the human that your reasoning is weakest. |
+
+**Fast exit:** If you can name your key assumptions, verify they're current (file mtimes, recent user messages, no intervening actions), and the scope matches the user's actual request — state that in one sentence and proceed. The value was in checking, not in the ceremony of reporting. Don't write a frame audit when a frame glance suffices.
 
 ## Failure Modes (Dennett's Three Robots)
 
@@ -55,12 +61,17 @@ This skill has no clean stopping rule. Fodor: "The frame problem is just Hamlet'
 - [Stale cache assumption](examples/stale-cache-assumption.md) — team debugs cache when the real problem is corrupted migration data
 - [Inherited problem framing](examples/inherited-problem-framing.md) — ticket requests rate limiting for a problem that async processing already solved
 
+## Arriving From Another Skill
+
+- **From representing-and-intervening:** R&I's Update phase revealed a structural model revision — the model was wrong. Carry the *old* model's assumptions into Name the Frame. The question is: what did the old model assume that turned out to be false, and what other assumptions share that same basis?
+- **From causal-analysis:** A causal claim didn't hold up. The frame to audit is the causal assumption itself — what were you assuming about the causal structure, and where did that assumption come from?
+
 ## Transition Signals
 
-- **Can't name the frame because you don't have a model** → start with **representing-and-intervening**. You need R&I's Represent phase before you can name what you're holding constant.
-- **Frame check reveals the problem definition itself is wrong** → return to **representing-and-intervening** (Problem Setting / Schon). The frame error is upstream of any solution.
-- **Frame check reveals a regulation mismatch** → switch to **requisite-variety**. The frame was "this regulator is sufficient" and it isn't.
-- **Need to establish whether a causal assumption in the frame actually holds** → switch to **causal-analysis**. The frame contains a causal claim that hasn't been tested.
-- **Frame is solid, assumptions verified, ready to act** → if **writing-plans** is available, use it to structure the work.
+- **Can't name the frame because you don't have a model** → suggest **representing-and-intervening** to the user. They need R&I's Represent phase before naming what's held constant.
+- **Frame check reveals the problem definition itself is wrong** → suggest returning to **representing-and-intervening** (Problem Setting / Schon). The frame error is upstream of any solution.
+- **Frame check reveals a regulation mismatch** → suggest **requisite-variety** to the user. The frame was "this regulator is sufficient" and it isn't.
+- **Need to establish whether a causal assumption in the frame actually holds** → suggest **causal-analysis** to the user. The frame contains a causal claim that hasn't been tested.
+- **Frame is solid, assumptions verified, ready to act** → if **writing-plans** is available, suggest it to the user.
 
 The frame problem is meta-epistemic: *what am I assuming without examining, and is that assumption still valid?*

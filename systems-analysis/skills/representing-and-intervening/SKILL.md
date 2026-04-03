@@ -7,13 +7,17 @@ description: Use when something is broken or behaving unexpectedly and you need 
 
 You must model a system before predicting its behavior, and predict before intervening. Source: Ian Hacking, *Representing and Intervening*.
 
+## Proportionality
+
+Not every question needs the full cycle. If the system is well-understood, the failure mode is familiar, and you can state your model and prediction in one sentence each — do that and act. The discipline is *having* a model before intervening (Hacking), not the ceremony around it. Scale the formality to the cost of being wrong.
+
 ## Five Phases
 
 | Phase | Action | Gate |
 |-------|--------|------|
-| **Represent** | State the model: components, relationships, assumptions. Then state one alternative model that explains the same observations differently. Where do the two models diverge? | — |
+| **Represent** | State the model: components, relationships, assumptions. Then ask: *what else could explain these observations?* State an alternative model if one is plausible. If nothing credible competes, say why in one sentence — that sentence is the value. | — |
 | **Predict** | What should we observe? Write it down. What part of your model are you least confident about? Target that first. | No intervention without written prediction |
-| **Intervene** | Pick one test from the repertoire — prefer the one that distinguishes between your competing models. Compare result to prediction. | One variable at a time |
+| **Intervene** | Pick one test from the repertoire. If you have competing models, prefer the test that distinguishes them. If not, prefer the test that most directly falsifies your single model. Compare result to prediction. | One variable at a time |
 | **Observe** | Record actual vs. predicted | — |
 | **Update** | Prediction wrong? → See Update Decision | — |
 
@@ -22,7 +26,7 @@ You must model a system before predicting its behavior, and predict before inter
 ## Two Modes
 
 - **Lightweight (default):** Natural language model and predictions. Always start here.
-- **Formal (opt-in):** Tool-assisted (e.g., causal diagrams, logic engines). Only after lightweight model exists.
+- **Formal (opt-in):** Tool-assisted (e.g., causal diagrams, logic engines). Only after lightweight model exists. Formal mode is for research, scientific, or regulatory contexts where the model needs to survive external scrutiny — not typical software engineering.
 
 ## Intervention Repertoire
 
@@ -78,14 +82,21 @@ Stop and return to Represent if you catch yourself:
 
 - [Flaky integration test](examples/flaky-test.md) — competing models (insertion order vs. race condition), executable verification
 - [API latency spike](examples/slow-api.md) — competing models (N+1 vs. index), query counting to distinguish them
+- [Design decision: queue vs. database](examples/design-decision.md) — competing approaches (not debugging), observability as the differentiator
+
+## Arriving From Another Skill
+
+- **From frame-problem:** You've named assumptions and checked freshness. Carry the verified assumptions into your Represent phase — they're your starting constraints. Focus Represent on the parts the frame audit flagged as uncertain.
+- **From causal-analysis:** You have a DAG and identified causal relationships. Use them as your model in Represent rather than building from scratch. Your prediction should test the edges you're least confident about.
+- **From requisite-variety:** You've identified a variety gap or regulation failure. The regulation model is your starting Represent — now ask *why* the regulator fails, which is an R&I question.
 
 ## Transition Signals
 
-- **Model reveals a regulation problem** (regulator can't match disturbance variety, "we keep adding rules") → switch to **requisite-variety**.
-- **Represent phase needs causal structure from observational data** (confounders, selection bias) → switch to **causal-analysis**.
-- **Production is down, what broke?** → use **systematic-debugging** (forensic, not epistemic).
-- **Update reveals structural revision** — the model was wrong, not miscalibrated. If **brainstorming** is available, use it to explore the problem space before committing to a new model.
-- **Assumptions feel stale or unexamined** — you have a model but haven't checked whether the world still matches it → switch to **frame-problem**.
-- **Model is solid, intervention plan is clear** — if **writing-plans** is available, use it to structure the fix. For multi-step fixes, **executing-plans** or **subagent-driven-development** can carry it out.
+- **Model reveals a regulation problem** (regulator can't match disturbance variety, "we keep adding rules") → suggest **requisite-variety** to the user.
+- **Represent phase needs causal structure from observational data** (confounders, selection bias) → suggest **causal-analysis** to the user.
+- **Production is down, what broke?** → suggest **systematic-debugging** to the user (forensic, not epistemic).
+- **Update reveals structural revision** — the model was wrong, not miscalibrated. If **brainstorming** is available, suggest it to the user to explore the problem space before committing to a new model.
+- **Assumptions feel stale or unexamined** — you have a model but haven't checked whether the world still matches it → suggest **frame-problem** to the user.
+- **Model is solid, intervention plan is clear** — if **writing-plans** is available, suggest it to the user. For multi-step fixes, suggest **executing-plans** or **subagent-driven-development**.
 
 R&I is epistemic: *how does this work, and what will happen if I change it?*

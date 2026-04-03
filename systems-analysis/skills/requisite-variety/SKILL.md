@@ -7,6 +7,10 @@ description: Use when designing, evaluating, or diagnosing control and regulatio
 
 Three principles for regulation and control. Sources: Ashby (1956), Conant & Ashby (1970).
 
+## Proportionality
+
+Not every regulation question needs a full variety audit. If D, R, and E are obvious and the variety gap (or absence of one) is clear in a sentence — state it and move on. Ashby's Law holds whether you spend five seconds or five minutes applying it. Scale the analysis to the cost of the regulation failing.
+
 ## Three Principles
 
 | Principle | Statement | Diagnostic question |
@@ -67,13 +71,19 @@ A team has 200+ custom WAF rules but keeps getting breached. The SOC wants more 
 ## Examples
 
 - [Alert fatigue](examples/alert-fatigue.md) — 400 rules with 15 effective responses, executable variety counting, constraint discovery
+- [Notification throttling](examples/notification-throttling.md) — per-type rate limits that miss the aggregate, constraint discovery via event clustering
+
+## Arriving From Another Skill
+
+- **From representing-and-intervening:** You have a model from R&I's Represent phase. Map its components to D/R/T/E/η rather than re-deriving them. The R&I model tells you *how the system works*; now ask *whether the regulator has enough variety to control it*.
+- **From frame-problem:** The frame audit may have revealed that "our controls are sufficient" was an unexamined assumption. Start the variety check at that specific assumption.
 
 ## Transition Signals
 
-- **Can't name D/R/T/E/η** — you don't have a model yet → start with **representing-and-intervening**.
-- **Need to establish a causal link from observational data** before designing the regulator → use **causal-analysis**.
-- **Variety is sufficient but system is still failing** — the problem may be epistemic (wrong model), not regulatory → return to **representing-and-intervening**.
-- **Analysis complete, regulator needs redesign** — the three principles told you what's wrong. If **brainstorming** is available, use it to explore redesign options. If **writing-plans** is available, use it to structure the work. For independent workstreams, **subagent-driven-development** can parallelize.
+- **Can't name D/R/T/E/η** — you don't have a model yet → suggest **representing-and-intervening** to the user.
+- **Need to establish a causal link from observational data** before designing the regulator → suggest **causal-analysis** to the user.
+- **Variety is sufficient but system is still failing** — the problem may be epistemic (wrong model), not regulatory → suggest returning to **representing-and-intervening**.
+- **Analysis complete, regulator needs redesign** — the three principles told you what's wrong. If **brainstorming** is available, suggest it to the user to explore redesign options. If **writing-plans** is available, suggest it to structure the work. For independent workstreams, suggest **subagent-driven-development**.
 
 ## Related Skills
 

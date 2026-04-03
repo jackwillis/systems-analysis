@@ -11,6 +11,10 @@ Correlation does not establish cause. Whether you're designing a study or auditi
 
 Follow the steps in order. Do not skip to study design before completing the DAG and identifiability check.
 
+## Proportionality
+
+Not every causal question needs the full pipeline. If the causal structure is simple (one obvious cause, no plausible confounders) and the stakes are low, state the estimand and the threat you're dismissing in one sentence each. The discipline is *locating the question on the ladder* (Pearl), not running nine steps for a two-variable system. Scale the rigor to the cost of a wrong causal conclusion.
+
 ## Evaluating Existing Claims
 
 If you're auditing causal reasoning rather than designing a study, start here:
@@ -200,9 +204,14 @@ What this study can and cannot answer: [1-2 sentences]
 
 - [Push notifications and retention](examples/notification-retention.md) — engagement as confounder, incomplete adjustment set, experiment recommendation
 
+## Arriving From Another Skill
+
+- **From representing-and-intervening:** You have a model with identified relationships. These relationships are your candidate DAG edges. Start at Step 4 (Draw the DAG) rather than Step 2 (Gather Context) — R&I already did that work. Flag which edges R&I was least confident about; those are your priority for confounding checks.
+- **From frame-problem:** A frame audit revealed an unexamined causal assumption ("we assumed X causes Y"). That assumption is your target estimand. Start at Step 1 to locate it on Pearl's Ladder.
+
 ## Transition Signals
 
-- **Question is "why is this behaving this way"** rather than "does X cause Y" → start with **representing-and-intervening**.
-- **Causal structure reveals a regulation problem** (not enough control variety to act on identified causes) → switch to **requisite-variety**.
-- **Can't state the estimand** — the question may not be causal yet. Model the system first → **representing-and-intervening**.
-- **Study designed, ready to execute** — if **writing-plans** is available, use it to structure the study execution (data collection, analysis pipeline, reporting). For independent workstreams (e.g., data extraction, power analysis, sensitivity analysis), **subagent-driven-development** can parallelize.
+- **Question is "why is this behaving this way"** rather than "does X cause Y" → suggest **representing-and-intervening** to the user.
+- **Causal structure reveals a regulation problem** (not enough control variety to act on identified causes) → suggest **requisite-variety** to the user.
+- **Can't state the estimand** — the question may not be causal yet. Suggest **representing-and-intervening** to the user to model the system first.
+- **Study designed, ready to execute** — if **writing-plans** is available, suggest it to the user to structure the study execution. For independent workstreams (e.g., data extraction, power analysis, sensitivity analysis), suggest **subagent-driven-development**.
