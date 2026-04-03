@@ -16,6 +16,11 @@
       "name": "text-utils",
       "description": "Efficient text extraction and format conversion: fetch markdown from URLs, render markdown to PDF, extract text from PDFs.",
       "source": "./text-utils"
+    },
+    {
+      "name": "break-things",
+      "description": "Failure-mode-first test design: predict how code breaks, write the guard, mutate to verify.",
+      "source": "./break-things"
     }
   ]
 }

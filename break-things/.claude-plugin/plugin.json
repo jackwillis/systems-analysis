@@ -1,0 +1,18 @@
+{
+  "name": "break-things",
+  "version": "0.1.0",
+  "description": "Failure-mode-first test design: predict how code breaks, write the guard, mutate to verify (DeMillo/Hoare/Ashby).",
+  "author": {
+    "name": "Jack Willis",
+    "email": "jack@attac.us"
+  },
+  "license": "MIT",
+  "keywords": [
+    "testing",
+    "mutation",
+    "test-design",
+    "fault-analysis",
+    "regression",
+    "verification"
+  ]
+}
