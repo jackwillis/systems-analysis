@@ -68,7 +68,7 @@ This is targeted mutation testing (DeMillo et al., 1978): one predicted mutation
 
 - **Need to understand the system before you can predict failures** — suggest **representing-and-intervening** to the user. You need a model before you can predict how it breaks.
 - **Want to evaluate the whole suite, not just this change** — suggest **is-it-tested** to the user.
-- **Ready to write the test using TDD's red-green cycle** — if **test-driven-development** is available, suggest it. `what-to-test` decides *what*; TDD executes *how*.
+- **Ready to write the test using TDD's red-green cycle** — if **test-driven-development** is available, suggest it to the user. `what-to-test` decides *what*; TDD executes *how*.
 - **The predicted failure mode reveals a design problem** — the code is structured in a way that makes the failure likely. Suggest **representing-and-intervening** to the user to model the design before testing around it.
 
 what-to-test is predictive: *what will break, and does the test catch it?*
