@@ -73,5 +73,6 @@ This skill has no clean stopping rule. Fodor: "The frame problem is just Hamlet'
 - **Frame check reveals a regulation mismatch** → suggest **requisite-variety** to the user. The frame was "this regulator is sufficient" and it isn't.
 - **Need to establish whether a causal assumption in the frame actually holds** → suggest **causal-analysis** to the user. The frame contains a causal claim that hasn't been tested.
 - **Frame is solid, assumptions verified, ready to act** → if **writing-plans** is available, suggest it to the user.
+- **Frame audit revealed an untested assumption** — if **what-to-test** is available, suggest it to the user. The assumption is what they're guarding against.
 
 The frame problem is meta-epistemic: *what am I assuming without examining, and is that assumption still valid?*

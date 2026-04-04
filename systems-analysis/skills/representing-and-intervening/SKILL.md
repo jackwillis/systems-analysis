@@ -98,5 +98,6 @@ Stop and return to Represent if you catch yourself:
 - **Update reveals structural revision** — the model was wrong, not miscalibrated. If **brainstorming** is available, suggest it to the user to explore the problem space before committing to a new model.
 - **Assumptions feel stale or unexamined** — you have a model but haven't checked whether the world still matches it → suggest **frame-problem** to the user.
 - **Model is solid, intervention plan is clear** — if **writing-plans** is available, suggest it to the user. For multi-step fixes, suggest **executing-plans** or **subagent-driven-development**.
+- **Prediction is clear and you need to encode it as a test** — if **what-to-test** is available, suggest it to the user. R&I's prediction becomes the test's causal claim.
 
 R&I is epistemic: *how does this work, and what will happen if I change it?*

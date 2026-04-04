@@ -84,6 +84,7 @@ A team has 200+ custom WAF rules but keeps getting breached. The SOC wants more 
 - **Need to establish a causal link from observational data** before designing the regulator → suggest **causal-analysis** to the user.
 - **Variety is sufficient but system is still failing** — the problem may be epistemic (wrong model), not regulatory → suggest returning to **representing-and-intervening**.
 - **Analysis complete, regulator needs redesign** — the three principles told you what's wrong. If **brainstorming** is available, suggest it to the user to explore redesign options. If **writing-plans** is available, suggest it to structure the work. For independent workstreams, suggest **subagent-driven-development**.
+- **The regulator under analysis is a test suite** — if **is-it-tested** is available, suggest it to the user. D/R/E/η map directly to that skill's framework.
 
 ## Related Skills
 
