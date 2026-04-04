@@ -13,7 +13,9 @@ description: |
 
 # Disfluent: Strategic Friction for AI Text
 
-Fluent AI output triggers cognitive surrender — uncritical adoption of AI-generated answers (Shaw & Nave, 2026). This skill introduces deliberate disfluency to reactivate the reader's deliberation. It is not about making text worse. It is about making text honest about what it knows.
+Fluent AI output may trigger what Shaw & Nave (2026) call cognitive surrender — uncritical adoption of AI-generated answers. That's one working paper, not settled science. But the mechanism is plausible: smooth text feels authoritative, and readers stop questioning it.
+
+This skill introduces deliberate disfluency to reactivate deliberation. It won't make text worse. Whether it makes text more honest depends on how well you use it — the technique exposes gaps, but only if you're looking at the right text.
 
 > "When System 3's outputs are fast, fluent, and seemingly authoritative, users may bypass effortful reasoning and adopt its answers as their own. Conversely, when outputs introduce disfluency, System 3 can trigger greater deliberation." — Shaw & Nave (2026)
 
@@ -41,13 +43,13 @@ When given text to make disfluent:
 
 ## PASS 1: SURFACE (MECHANICAL)
 
-Strip fluency markers that create false authority. Fluent delivery triggers cognitive surrender regardless of content quality (Shaw & Nave, 2026).
+Strip fluency markers that create false authority. Shaw & Nave's argument is that fluent delivery triggers cognitive surrender regardless of content quality. If they're right, surface-level edits do real work.
 
 ### 1. Strip False Connectives
 
 **Kill list:** Furthermore, Additionally, Moreover, It's worth noting that, Importantly, It should be noted that, In addition, What's more, Notably, Significantly, Crucially
 
-**Problem:** These words create the illusion of logical flow where there is none. They signal "I have built an argument" when the text is just listing claims. Removing them forces the reader to evaluate whether the claims actually connect.
+These words create the illusion of logical flow where there is none. They signal "I have built an argument" when the text is just listing claims. Grice's cooperative principle (1975) explains why this isn't cosmetic: readers assume connectives are *meaningful* — that "furthermore" signals a logical relationship the writer intends. Stripping it removes a false pragmatic inference, not just a word.
 
 **Before:**
 > Furthermore, the team has improved deployment frequency. Additionally, error rates have dropped. Moreover, customer satisfaction scores are up.
@@ -55,7 +57,7 @@ Strip fluency markers that create false authority. Fluent delivery triggers cogn
 **After:**
 > The team has improved deployment frequency. Error rates have dropped. Customer satisfaction scores are up.
 
-The reader now has to decide: are these three facts related, or just adjacent? That decision is the point.
+Now the reader has to decide whether these three facts are related or just adjacent. But note: the same cooperative principle means readers will try to find coherence in whatever you replace it with, including the absence of connectives. There's no neutral voice — just different signals.
 
 ---
 
@@ -63,7 +65,7 @@ The reader now has to decide: are these three facts related, or just adjacent? T
 
 **Kill list:** In conclusion, This represents a major step, Overall, Taken together, In summary, This demonstrates that, These findings suggest that, This underscores the importance of
 
-**Problem:** Neat conclusions signal "you can stop thinking now." Cutting them leaves the reader to draw their own inference.
+Neat conclusions signal "you can stop thinking now." Cut them. If the evidence is good, the reader will draw the conclusion themselves. If they don't, the evidence wasn't strong enough.
 
 **Before:**
 > Response times have improved by 40% since the migration. Error rates are down. In conclusion, the migration to microservices has been a clear success, demonstrating the value of modern architectural patterns.
@@ -71,13 +73,11 @@ The reader now has to decide: are these three facts related, or just adjacent? T
 **After:**
 > Response times have improved by 40% since the migration. Error rates are down.
 
-Let the reader conclude. If the evidence is good, they will. If they don't, the evidence wasn't good enough — and you learned something.
-
 ---
 
 ### 3. Break Parallel Structure
 
-**Problem:** Rule of three, balanced lists, and symmetric phrasing signal "this is complete and considered." They create a false sense of thoroughness. Real analysis is usually uneven — some points matter more, some are uncertain.
+Rule of three, balanced lists, symmetric phrasing — these signal "this is complete and considered." Real analysis is usually uneven. Some points matter more. Some are uncertain. The structure should reflect that.
 
 **Before:**
 > The platform offers improved reliability, enhanced scalability, and better developer experience.
@@ -85,13 +85,11 @@ Let the reader conclude. If the evidence is good, they will. If they don't, the 
 **After:**
 > The platform is more reliable. It may scale better, though we haven't load-tested past current traffic. Developers say they prefer it.
 
-Uneven treatment reflects uneven evidence. That's honest.
-
 ---
 
 ### 4. Reduce Subordination
 
-**Problem:** Complex sentences with multiple dependent clauses read as authoritative and complete. They're hard to argue with because it's hard to isolate which part you disagree with. Shorter sentences are easier to challenge individually.
+Complex sentences with multiple dependent clauses are hard to argue with — not because they're right, but because it's hard to isolate which part you disagree with.
 
 **Before:**
 > By leveraging the new caching layer, which was designed to handle the increased throughput requirements that emerged after the Q3 traffic spike, the team was able to reduce p99 latency by 60%.
@@ -103,11 +101,11 @@ Uneven treatment reflects uneven evidence. That's honest.
 
 ## PASS 2: EPISTEMIC (JUDGMENT)
 
-Find where fluency hides real uncertainty. The human needs to stay engaged with the substance, not just the surface (Bainbridge, 1983).
+Find where fluency hides real uncertainty. Bainbridge (1983) wrote about the ironies of automation in industrial control — operators lose skill precisely when automation needs them most. The connection to AI text is indirect but suggestive: if readers stop engaging with fluent AI prose, they lose the ability to evaluate it when it matters.
 
 ### 5. Flag Unsupported Claims
 
-**Problem:** AI text asserts things confidently without evidence. Readers accept confident assertions more readily than hedged ones, even when the confidence is unwarranted.
+AI text asserts things confidently without evidence. Confident assertions get accepted more readily than hedged ones. That much seems clear from basic psychology, though the specific effect size for AI text is not well-established.
 
 **Draft mode:**
 > The migration improved reliability. `[How measured? Compared to what baseline?]`
@@ -121,7 +119,7 @@ Look for: causal claims without evidence, quantitative claims without sources, e
 
 ### 6. Surface Hidden Uncertainty
 
-**Problem:** AI text presents one interpretation as if it's the only one. It says "X causes Y" when the evidence is correlational. It treats complex situations as settled.
+AI text presents one interpretation as if it's the only one. It says "X causes Y" when the evidence is correlational. It treats complex situations as settled.
 
 **Draft mode:**
 > Users who received onboarding emails had 20% higher retention. `[Correlation — engaged users were more likely to both open emails and retain. Not necessarily causal.]`
@@ -135,7 +133,7 @@ Look for: "causes," "leads to," "results in," "drives" used with observational d
 
 ### 7. Leave Gaps for Human Judgment
 
-**Problem:** AI text draws conclusions the reader should draw themselves. This is the deepest form of cognitive surrender — the reader outsources the judgment, not just the analysis.
+AI text draws conclusions the reader should draw themselves. This may be the deepest form of cognitive surrender — outsourcing the judgment, not just the analysis. Or it may just be convenience. Either way, strip it.
 
 **Draft mode:**
 > `[Given these trade-offs, which approach fits your constraints?]`
@@ -149,23 +147,31 @@ Look for: recommendations, "the best approach is," "teams should," "the clear wi
 
 ### 8. Mark Provenance
 
-**Problem:** AI text blends established facts, inferences, and speculation into a single confident voice. The reader can't tell which parts to trust.
+AI text blends established facts, inferences, and speculation into a single confident voice. The reader can't tell which parts to trust.
 
-**Draft mode:**
+In **draft mode**, use bracket labels:
 > Python 3.12 added `@override`. `[fact]` Early benchmarks show 5-10% performance gains. `[benchmarks exist but sample is small]` This could make Python competitive with Go for CLI tools. `[speculation]`
 
-**Share mode:**
-> Python 3.12 added `@override`. Early benchmarks — though limited — show 5-10% performance gains. Whether this makes Python competitive with Go for CLI tools is an open question.
+In **share mode**, let the voice shift instead of annotating. Facts get flat, declarative delivery. Inferences get hedged, conversational. Speculation gets rough, openly uncertain. The texture of the sentence tells the reader what kind of claim it is.
+> Python 3.12 added `@override`. Early benchmarks — limited ones — show 5-10% performance gains. Whether that makes Python competitive with Go for CLI tools, who knows. Different problem, different constraints.
 
 ---
 
 ## WHAT THIS SKILL IS NOT
 
-**Disfluent is not humanizer.** Humanizer makes AI text pass for human writing. Disfluent makes AI text demand human engagement. Humanizer removes AI patterns; disfluent exposes epistemic gaps. Text can be both humanized and disfluent, or neither.
+**Disfluent is not humanizer.** Humanizer makes AI text pass for human writing. Disfluent makes AI text demand human engagement. They work on different problems — one is about detection, the other about cognition. Text can be both humanized and disfluent, or neither.
 
-**Disfluent does not make text worse.** It makes text more honest. If the result reads worse, it's because the original was hiding something behind fluency.
+**Disfluent does not make text worse.** That's the claim, anyway. If the result reads worse, it's probably because the original was hiding something behind fluency. But it's also possible you over-applied friction to text that was fine. Use judgment.
 
-**Disfluent does not apply uniformly.** Established facts get zero friction. Unsupported claims get heavy friction. The contrast is informative — the reader learns where the text is strong by noticing where the friction is absent.
+**Uniformity would defeat the purpose.** Established facts get zero friction. Unsupported claims get heavy friction. The reader learns where the text is strong by noticing where friction is absent. If you add friction everywhere, you've just made noisy text.
+
+---
+
+## WHERE THIS FAILS
+
+Grice's cooperative principle means readers interpret whatever style you give them. They'll find coherence in roughness, read intention into hedges, interpret unevenness as a signal of thoroughness. There is no neutral voice — just different signals. This skill doesn't escape that. It trades one set of signals for another.
+
+The practical consequence: if you apply this skill formulaically — same hedges, same bracket patterns, same rhythm of rough-then-smooth — the disfluency becomes its own fluency. The roughness starts to mean "this writer is careful," and the reader relaxes again. Vary the technique. Don't let it become a house style.
 
 ---
 
@@ -204,6 +210,6 @@ Provide:
 
 ## References
 
-- Shaw, S.D. & Nave, G. (2026). "Thinking — Fast, Slow, and Artificial." Working paper, Wharton School.
-- Bainbridge, L. (1983). "Ironies of Automation." Automatica, 19(6), 775-779.
+- Shaw, S.D. & Nave, G. (2026). "Thinking — Fast, Slow, and Artificial." Working paper, Wharton School. [Working paper — not peer-reviewed. The cognitive surrender framing is theirs; this skill assumes it's directionally right.]
+- Bainbridge, L. (1983). "Ironies of Automation." Automatica, 19(6), 775-779. [About industrial automation, not AI text. The connection is by analogy.]
 - Grice, H.P. (1975). "Logic and Conversation." In Syntax and Semantics 3: Speech Acts.
