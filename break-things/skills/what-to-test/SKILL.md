@@ -16,8 +16,8 @@ Not every test needs the full sequence. If the guard is obvious, the causal clai
 | Question | What it produces | Source |
 |----------|-----------------|--------|
 | **What are you guarding against?** | The specific regression or acceptance criterion — a thing that could go wrong, not a vague "it should work." | — |
-| **What's the causal claim?** | "If [condition], then [behavior]." The test's contract — its reason to exist. | Hoare (1969): precondition, operation, postcondition. |
-| **How does it most likely break?** | The predicted failure mode. Determines test placement (unit vs integration), assertion shape, and what negative cases matter. | DeMillo et al. (1978): real faults are small deviations from correct programs (Competent Programmer Hypothesis). |
+| **What's the causal claim?** | "If [condition], then [behavior]." The test's contract — its reason to exist. | Inspired by Hoare (1969): a test assertion is not a formal postcondition, but the discipline of stating the contract before writing the test is the same. |
+| **How does it most likely break?** | The predicted failure mode. Determines test placement (unit vs integration), assertion shape, and what negative cases matter. | DeMillo et al. (1978) conjectured that real faults are small deviations from correct programs (Competent Programmer Hypothesis). This is a motivating assumption for mutation testing, not a proven result. |
 
 ## Mutate and Verify
 
@@ -29,9 +29,9 @@ After writing the test, verify it guards what you claimed:
 4. **Confirm failure.** If the test fails: the guard works. Revert and move on. If the test passes: it doesn't guard what you claimed — fix the test or revise your failure prediction.
 5. **Revert the mutation.**
 
-Don't reason about whether the test *would* catch the mutation. Introduce it and run the test. Computed results are more reliable than inferred ones.
+Don't reason about whether the test *would* catch the mutation. Introduce it and run the test.
 
-This is targeted mutation testing (DeMillo et al., 1978): one predicted mutation, one verification. The Coupling Effect suggests tests that catch simple mutations also catch complex ones.
+This is targeted mutation testing (DeMillo et al., 1978): one predicted mutation, one verification. DeMillo et al. also conjectured a Coupling Effect — that tests catching simple mutations tend to catch complex ones. This held in their experiments on small programs; whether it generalizes to complex stateful systems is an open question. The targeted approach (one predicted mutation) sidesteps this by testing the specific failure you care about.
 
 ## Red Flags
 
@@ -46,14 +46,14 @@ This is targeted mutation testing (DeMillo et al., 1978): one predicted mutation
 | Thought | Reality |
 |---------|---------|
 | "Obviously it needs a test for X" | Obvious tests often test the framework, not the behavior. State the causal claim. |
-| "I'll add more tests later" | Later means never, or means after the regression ships. Guard the predicted failure now. |
+| "I'll add more tests later" | Often means never, or means after the regression ships. Guard the predicted failure now. |
 | "High coverage means it's tested" | Coverage measures execution, not falsification. A test that runs code but asserts nothing has 100% coverage and 0% value. |
-| "The mutation gate is overkill" | One edit + one test run. It costs less than debugging the regression it would have caught. |
+| "The mutation gate is overkill" | One edit + one test run. If your test suite is fast, this costs seconds. If it's slow, target the mutation gate at non-trivial guards — the proportionality section applies here too. |
 | "I know this test works" | You know it passes. You don't know it *guards*. Mutate and verify. |
 
 ## Honest Limitation
 
-"Testing shows the presence, not the absence of bugs" (Dijkstra). This skill guards against *predicted* failures. The most dangerous bugs are the ones nobody anticipated. For systematic exploration of the failure space beyond prediction, use `is-it-tested`.
+"Testing shows the presence, not the absence of bugs" (Dijkstra, 1969 NATO conference). This skill guards against *predicted* failures. The most dangerous bugs are the ones nobody anticipated. For systematic exploration of the failure space beyond prediction, use `is-it-tested`.
 
 ## Examples
 

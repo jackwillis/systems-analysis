@@ -18,7 +18,7 @@ A payments service handles Stripe webhooks. The team has 40 tests, all passing, 
 
 ## Variety Analysis
 
-D (failure space) = 6 distinct modes. R (test suite) = 3 modes covered. D > R. The suite's variety is half the failure space's variety.
+D (failure space) = 6 named modes. R (test suite) = 3 modes covered. D > R — but only if the enumeration is complete. There may be failure modes not listed here (e.g., clock skew between services, webhook signature rotation). The gap is at least this large; it may be larger.
 
 **Priority:** #1 and #2 first (already caused incidents), then #6 (severity — data corruption), then #5 (silent failure).
 

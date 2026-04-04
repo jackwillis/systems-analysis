@@ -15,7 +15,7 @@ Not every suite needs a full audit. If the codebase is small, the failure space 
 
 | Question | What it produces | Source |
 |----------|-----------------|--------|
-| **What's the failure space?** | Enumerate what can go wrong — not lines of code, but failure modes. Group by category: data corruption, auth bypass, silent wrong answer, crash, performance regression. | Beizer (1990): fault-based analysis. |
+| **What's the failure space?** | Enumerate what can go wrong — not lines of code, but failure modes. Group by category: data corruption, auth bypass, silent wrong answer, crash, performance regression. This enumeration is the hardest step and the one most likely to be incomplete — the audit's quality is bounded by it. | Beizer (1990): fault-based analysis. |
 | **What does the suite guard?** | Map existing tests to failure modes from question 1. For each test, state the causal claim it embodies. Tests that can't be mapped to a failure mode may not be guarding anything. | — |
 | **Where are the gaps?** | Failure modes with no corresponding test. This is the variety analysis: D (failure space) vs R (test suite). Unguarded failure modes are the gaps. | Ashby (1956): requisite variety. |
 
@@ -27,6 +27,8 @@ This is requisite variety applied to testing:
 - **R** — test suite (what's guarded)
 - **E** — system correctness
 - **η** — acceptable defect rate
+
+This is a simplification of Ashby's concept — variety in his sense is about distinguishable response states, not a count of categories. A suite with 3 behavioral tests can have more effective variety than one with 40 structural tests. The count is a useful starting point, but what matters is whether each failure mode has a test that would *fail differently* if that mode occurred.
 
 If D > R, the suite has gaps. The question is whether the unguarded failure modes matter. Prioritize by: (1) severity of the failure, (2) likelihood given anticipated changes, (3) cost to add the guard.
 
