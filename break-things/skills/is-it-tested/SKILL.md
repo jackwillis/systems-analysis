@@ -19,6 +19,27 @@ Not every suite needs a full audit. If the codebase is small, the failure space 
 | **What does the suite guard?** | Map existing tests to failure modes from question 1. For each test, state the causal claim it embodies. Tests that can't be mapped to a failure mode may not be guarding anything. | — |
 | **Where are the gaps?** | Failure modes with no corresponding test. This is the variety analysis: D (failure space) vs R (test suite). Unguarded failure modes are the gaps. | Ashby (1956): requisite variety. |
 
+## Enumerating the Failure Space
+
+The first question — "What's the failure space?" — is where the audit succeeds or fails. A missed failure mode is an invisible gap.
+
+**Step 1: Identify the system's boundaries.** What goes in? What comes out? What external systems does it touch? Each boundary is a source of failure modes.
+
+**Step 2: Walk each boundary with four questions.**
+
+| Question | What it finds |
+|----------|--------------|
+| What if this input is **wrong**? | Data corruption, injection, type errors |
+| What if this input is **missing**? | Null paths, silent defaults, crashes |
+| What if this input is **late or reordered**? | Race conditions, stale reads, ordering assumptions |
+| What if this operation **partially completes**? | Inconsistent state, dangling references, phantom writes |
+
+**Step 3: Group by consequence, not by cause.** Multiple inputs can cause the same failure (e.g., both a malformed webhook and a missing field cause silent data loss). Group by what goes wrong for the user. This avoids double-counting and surfaces the modes that matter most.
+
+**Step 4: Cross-reference with Beizer's fault categories** — data corruption, auth bypass, silent wrong answer, crash, performance regression. If a category has zero entries, ask whether the system is genuinely immune or whether you missed something.
+
+**Step 5: State your confidence.** The enumeration is never complete. Name what you're least confident about. This bounds the audit's reliability.
+
 ## Variety Analysis
 
 This is requisite variety applied to testing:
@@ -57,6 +78,7 @@ A test suite audit reveals *known unknowns* — failure modes you can name but h
 ## Examples
 
 - [Webhook handler suite audit](examples/webhook-suite-audit.md) — 40 tests at 85% coverage guarding 3 of 6 failure modes, variety gap analysis
+- [ETL pipeline suite audit](examples/etl-pipeline-audit.md) — nightly batch pipeline, boundary-walk enumeration of 5 failure modes, suite oriented toward the least dangerous mode
 
 ## Arriving From Another Skill
 
@@ -68,5 +90,6 @@ A test suite audit reveals *known unknowns* — failure modes you can name but h
 - **Gaps identified, need to write specific tests** — suggest **what-to-test** to the user for each gap. The gap is the answer to question 1 (what you're guarding against).
 - **Suite structure itself is the problem** (tests mirror implementation, no failure-mode orientation) — suggest **representing-and-intervening** to the user. The test architecture needs a model before individual tests can help.
 - **Failure space is too large to enumerate** — suggest property-based testing or fuzzing as techniques. This is beyond the skill's scope — it identifies the need, not the generative solution.
+- **The variety gap reveals a systemic regulation problem** — the suite's D > R is a symptom of a broader control failure (e.g., the deployment process itself has insufficient variety to prevent defects from reaching the suite). If **requisite-variety** is available, suggest it to the user to analyze the full regulatory chain, not just the test layer.
 
 is-it-tested is evaluative: *does the suite's variety match the failure space?*

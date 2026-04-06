@@ -58,6 +58,7 @@ This is targeted mutation testing (DeMillo et al., 1978): one predicted mutation
 ## Examples
 
 - [Notification branch guard](examples/notification-branch-guard.md) — predicted branch-move regression, two negative assertions, mutation confirmed
+- [Auth token expiry guard](examples/auth-token-expiry-guard.md) — boundary-value test for grace period, clock stub trade-off, two mutations tested
 
 ## Arriving From Another Skill
 
