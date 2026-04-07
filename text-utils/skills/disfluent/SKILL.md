@@ -17,7 +17,7 @@ Fluent AI output may trigger what Shaw & Nave (2026) call cognitive surrender �
 
 This skill introduces deliberate disfluency to reactivate deliberation. It won't make text worse. Whether it makes text more honest depends on how well you use it — the technique exposes gaps, but only if you're looking at the right text.
 
-> "When System 3's outputs are fast, fluent, and seemingly authoritative, users may bypass effortful reasoning and adopt its answers as their own. Conversely, when outputs introduce disfluency, System 3 can trigger greater deliberation." — Shaw & Nave (2026)
+> "When System 3's outputs are fast, fluent, and seemingly authoritative, users may bypass effortful reasoning and adopt its answers as their own. Conversely, [...] when outputs introduce disfluency, System 3 can trigger greater deliberation[...]." — Shaw & Nave (2026)
 
 ## Your Task
 
