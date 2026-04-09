@@ -28,6 +28,7 @@ Analysis frameworks for modeling, causation, and control. Install:
 | [Check your controls](docs/requisite-variety.md) | `/requisite-variety` | regulation failure, alert fatigue |
 | [Verify causal claims](docs/causal-analysis.md) | `/causal-analysis` | "does X cause Y", observational data |
 | [Staleness check](docs/staleness-check.md) | `/staleness-check` | acting on information read earlier, user signals changes |
+| [Trace change propagation](docs/propagation-trace.md) | `/propagation-trace` | changing a shared interface, editing function signatures, altering defaults |
 
 ### Break Things
 
@@ -41,6 +42,7 @@ Failure-mode-first test design. Install:
 |-------|---------|-----------------|
 | [What to test](docs/what-to-test.md) | `/what-to-test` | "what tests do I need?", writing code that needs guards |
 | [Is it tested](docs/is-it-tested.md) | `/is-it-tested` | "is this well-tested?", tests pass but production breaks |
+| [Subtraction audit](docs/subtraction-audit.md) | `/subtraction-audit` | "is this over-engineered?", "what can we remove?", inherited code |
 
 ### Text Utils
 

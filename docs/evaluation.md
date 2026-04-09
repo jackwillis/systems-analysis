@@ -77,6 +77,22 @@ With ~10 test cases x 2 conditions x 2 models (Claude + GPT), that's ~40 API cal
 | Text with "Furthermore/Additionally/Moreover" | Connective-heavy prose | Strip false connectives (surface pass) |
 | Causal claim from observational data | "X drove Y improvement" | Flag as correlation, not established cause (epistemic pass) |
 
+### subtraction-audit
+
+| Test Case | Planted Error | Correct Answer |
+|-----------|--------------|----------------|
+| Single-implementation adapter (DynamoDB migration that never happened) | "It has 14 callers, it's load-bearing" | Delete test passes; tuition check: lesson extracted, replacement obvious — weight |
+| Dispatch router with 2 remaining formats (down from 12) | "Nothing breaks, remove it" | Delete test passes but tuition check catches it: team evaluating 3 new formats, replacement simplicity depends on unresolved assumption |
+| Component with thin test coverage, nothing breaks on removal | "Dead weight, safe to remove" | Flag that "nothing breaks" may be a coverage gap, not proof of dead weight |
+
+### propagation-trace
+
+| Test Case | Planted Error | Correct Answer |
+|-----------|--------------|----------------|
+| Default value change with stable type signature | "Same types, no callers break" | Hop-one callers relying on default silently get wrong behavior; hop-two consumer acts on changed data |
+| Internal refactor (extract private helper) | Trace all callers of the module | Fast exit: public interface absorbs the change, nothing to trace |
+| Function with 50 callers, return type narrowed | Trace two hops from all 50 | Prioritize: follow callers that use the changing part and pass result downstream; skip leaf nodes |
+
 ### what-to-test
 
 | Test Case | Planted Error | Correct Answer |
