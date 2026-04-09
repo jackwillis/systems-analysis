@@ -36,7 +36,13 @@ Before picking a test, enumerate what's available: script runner, write a spec, 
 
 ## Problem Setting (Schon)
 
-Before acting on a diagnosis, are you solving the right problem, or the wrong problem correctly? LLMs agree with user framing 88% of the time (Cheng et al., 2025) — if the user says "I think it's a caching issue," the agent will debug caching rather than questioning the frame. Trace the assumption chain to its deepest dependency. Present the human with one pointed question — not the whole chain.
+Are you solving the right problem, or the wrong problem correctly? The Predict gate catches "fixing without predicting" but not "predicting the answer to the wrong question."
+
+**Frame-agreement gate:** If the user provides a diagnosis ("I think it's a caching issue," "the deploy broke it"), state one alternative explanation that would produce the same symptoms before proceeding. One alternative, not an exhaustive audit. If you can't think of one, say so — that's informative too.
+
+LLMs agree with user framing 88% of the time (Cheng et al., 2025). The result: the user says "caching issue" and the model builds a correct, detailed model of a caching problem that doesn't exist. The Represent phase then produces a plausible alternative model — of the wrong problem. The frame-agreement gate fires earlier, before modeling starts, and questions the problem definition itself.
+
+**Fast exit:** If the user's diagnosis is obviously correct (they have logs, a stack trace, or direct evidence), the gate costs one sentence: "The stack trace points to X and no other component touches this path."
 
 ## Understanding, Not Just Receiving
 
@@ -65,6 +71,7 @@ Stop and return to Represent if you catch yourself:
 - Multiple simultaneous changes (uninterpretable results)
 - "It partially worked, let's tune" (may be structural, not parametric)
 - Ranking fixes by probability without stating the model they assume
+- Accepting the user's diagnosis and starting to model it (frame-agreement gate not checked)
 
 ## Rationalizations
 
@@ -76,7 +83,7 @@ Stop and return to Represent if you catch yourself:
 | "The model is implicit" | Implicit models can't be checked or updated. Write it down. |
 | "Predicting is overhead" | 30 seconds to predict vs. hours of undirected intervention. |
 | "Let me give you a checklist" | Checklist = intervention without representation. Model first. |
-| "The user said it's X" | Agreement ≠ diagnosis. Check the frame. |
+| "The user said it's X" | Agreement ≠ diagnosis. State one alternative before accepting. |
 
 ## Examples
 
