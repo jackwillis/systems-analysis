@@ -41,7 +41,7 @@ Strip fluency markers that create false authority. Shaw & Nave's argument is tha
 
 **Kill list:** Furthermore, Additionally, Moreover, It's worth noting that, Importantly, It should be noted that, In addition, What's more, Notably, Significantly, Crucially
 
-These words create the illusion of logical flow where there is none. They signal "I have built an argument" when the text is just listing claims. Grice's cooperative principle (1975) explains why this isn't cosmetic: readers assume connectives are *meaningful* — that "furthermore" signals a logical relationship the writer intends. Stripping it removes a false pragmatic inference, not just a word.
+These words create the illusion of logical flow where there is none. They signal "I have built an argument" when the text is just listing claims. Readers assume connectives are *meaningful* — that "furthermore" signals a logical relationship the writer intends. Stripping it removes a false pragmatic inference, not just a word.
 
 **Before:**
 > Furthermore, the team has improved deployment frequency. Additionally, error rates have dropped. Moreover, customer satisfaction scores are up.
@@ -49,7 +49,7 @@ These words create the illusion of logical flow where there is none. They signal
 **After:**
 > The team has improved deployment frequency. Error rates have dropped. Customer satisfaction scores are up.
 
-Now the reader has to decide whether these three facts are related or just adjacent. But note: the same cooperative principle means readers will try to find coherence in whatever you replace it with, including the absence of connectives. There's no neutral voice — just different signals.
+Now the reader has to decide whether these three facts are related or just adjacent. But note: readers will try to find coherence in whatever you replace it with, including the absence of connectives. There's no neutral voice — just different signals.
 
 ---
 
@@ -93,7 +93,7 @@ Complex sentences with multiple dependent clauses are hard to argue with — not
 
 ## PASS 2: EPISTEMIC (JUDGMENT)
 
-Find where fluency hides real uncertainty. Bainbridge (1983) wrote about the ironies of automation in industrial control — operators lose skill precisely when automation needs them most. The connection to AI text is indirect but suggestive: if readers stop engaging with fluent AI prose, they lose the ability to evaluate it when it matters.
+Find where fluency hides real uncertainty. The analogy to automation is suggestive: operators lose skill precisely when automation needs them most. If readers stop engaging with fluent AI prose, they lose the ability to evaluate it when it matters.
 
 ### 5. Flag Unsupported Claims
 
@@ -217,5 +217,3 @@ Sentences 1, 3, and 4 are direct observations with verifiable claims — no fric
 ## References
 
 - Shaw, S.D. & Nave, G. (2026). "Thinking — Fast, Slow, and Artificial." Working paper, Wharton School. [Working paper — not peer-reviewed, but preregistered with three CRT-based studies. Key findings: (1) participants track AI accuracy but confidence inflates even when they know the AI is wrong, (2) item-level feedback shifts behavior from surrender to strategic offloading, (3) low Need for Cognition predicts vulnerability. The cognitive surrender framing is theirs; this skill assumes it's directionally right. Ecological validity caveat: CRT quiz tasks aren't the same as reading a post-mortem.]
-- Bainbridge, L. (1983). "Ironies of Automation." Automatica, 19(6), 775-779. [About industrial automation, not AI text. The connection is by analogy.]
-- Grice, H.P. (1975). "Logic and Conversation." In Syntax and Semantics 3: Speech Acts.

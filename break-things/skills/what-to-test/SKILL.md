@@ -53,7 +53,7 @@ This is targeted mutation testing (DeMillo et al., 1978): one predicted mutation
 
 ## Honest Limitation
 
-"Testing shows the presence, not the absence of bugs" (Dijkstra, 1969 NATO conference). This skill guards against *predicted* failures. The most dangerous bugs are the ones nobody anticipated. For systematic exploration of the failure space beyond prediction, use `is-it-tested`.
+Testing shows the presence, not the absence of bugs. This skill guards against *predicted* failures. The most dangerous bugs are the ones nobody anticipated. For systematic exploration of the failure space beyond prediction, use `is-it-tested`.
 
 ## Examples
 

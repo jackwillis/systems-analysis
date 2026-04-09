@@ -86,7 +86,7 @@ If D > R, the suite has gaps. The question is whether the unguarded failure mode
 
 ## Honest Limitation
 
-A test suite audit reveals *known unknowns* — failure modes you can name but haven't tested. It cannot reveal *unknown unknowns*. For exploring failure spaces beyond what you can enumerate, consider property-based testing (Claessen & Hughes, 2000), fuzzing, or chaos engineering. These are generative approaches that complement the predictive approach of `what-to-test` and the evaluative approach of `is-it-tested`.
+A test suite audit reveals *known unknowns* — failure modes you can name but haven't tested. It cannot reveal *unknown unknowns*. For exploring failure spaces beyond what you can enumerate, consider property-based testing, fuzzing, or chaos engineering. These are generative approaches that complement the predictive approach of `what-to-test` and the evaluative approach of `is-it-tested`.
 
 ## Examples
 
