@@ -113,7 +113,7 @@ AI text asserts things confidently without evidence. Confident assertions get ac
 **Share mode:**
 > The migration improved reliability, though the team hasn't published before/after metrics.
 
-Look for: causal claims without evidence, quantitative claims without sources, evaluative claims ("improved," "better," "successful") without criteria.
+Look for: causal claims without evidence, quantitative claims without sources, evaluative claims ("improved," "better," "successful") without criteria. Precision without stated uncertainty ("37% improvement" — what's the confidence interval? what's the sample?). Universal quantifiers from limited evidence ("all users prefer," "teams always," "never fails").
 
 ---
 
@@ -127,7 +127,7 @@ AI text presents one interpretation as if it's the only one. It says "X causes Y
 **Share mode:**
 > Users who received onboarding emails had 20% higher retention, though this may reflect engagement differences rather than email effectiveness.
 
-Look for: "causes," "leads to," "results in," "drives" used with observational data. Any time one explanation is given for a phenomenon that has several plausible explanations.
+Look for: "causes," "leads to," "results in," "drives" used with observational data. Any time one explanation is given for a phenomenon that has several plausible explanations. Temporal coincidence presented as causation ("after we deployed X, Y improved" — was it X, or something else that happened between?). Absence of alternatives ("the only explanation is" — says who?).
 
 ---
 
@@ -141,7 +141,7 @@ AI text draws conclusions the reader should draw themselves. This may be the dee
 **Share mode:**
 > The trade-offs suggest different answers depending on how you weight reliability against development speed.
 
-Look for: recommendations, "the best approach is," "teams should," "the clear winner." Replace with the evidence and let the reader decide.
+Look for: recommendations, "the best approach is," "teams should," "the clear winner." Replace with the evidence and let the reader decide. Premature consensus ("everyone agrees," "it's well-established that" — without citation). Risk assessments that present one side ("the risk is minimal" — minimal compared to what?).
 
 ---
 
@@ -163,7 +163,7 @@ In **share mode**, let the voice shift instead of annotating. Facts get flat, de
 
 **Disfluent does not make text worse.** That's the claim, anyway. If the result reads worse, it's probably because the original was hiding something behind fluency. But it's also possible you over-applied friction to text that was fine. Use judgment.
 
-**Uniformity would defeat the purpose.** Established facts get zero friction. Unsupported claims get heavy friction. The reader learns where the text is strong by noticing where friction is absent. If you add friction everywhere, you've just made noisy text.
+**Uniformity would defeat the purpose.** Established facts, direct measurements, correctly cited statistics, and properly attributed quotes get zero friction. Unsupported claims get heavy friction. The reader learns where to be skeptical by noticing where friction is *absent*. If every sentence has a bracket, none of them mean anything.
 
 ---
 
@@ -205,6 +205,20 @@ Provide:
 **Changes:**
 - Surface: stripped "Furthermore/Additionally/Moreover/In conclusion," broke the parallel structure, removed "demonstrating the team's commitment" and "prioritize improvements" (false completeness)
 - Epistemic: flagged unspecified vulnerabilities, flagged unquantified logging claim, challenged the conclusion that contradicts the evidence
+
+---
+
+## Calibration: When to Leave Text Alone
+
+Not every sentence needs friction. Here's a paragraph where three sentences are fine and two aren't.
+
+**Before:**
+> We migrated the payments service from Postgres 14 to Postgres 16 over the weekend. The migration reduced query latency because the new connection pooler handles load more efficiently. Monday's p99 latency was 45ms, down from 120ms the prior Monday. Disk utilization on the primary dropped from 78% to 61%. The migration has clearly been a success and the team should plan to upgrade the remaining services on the same timeline.
+
+**After (draft mode):**
+> We migrated the payments service from Postgres 14 to Postgres 16 over the weekend. The migration reduced query latency `[causal claim — was it the pooler, the version upgrade, the weekend's lower traffic, or all three?]` Monday's p99 latency was 45ms, down from 120ms the prior Monday. Disk utilization on the primary dropped from 78% to 61%. `[Let the reader judge success and decide the rollout plan based on these numbers.]`
+
+Sentences 1, 3, and 4 are direct observations with verifiable claims — no friction needed. Sentence 2 makes a causal claim from observational data. Sentence 5 draws a conclusion the reader should draw themselves.
 
 ---
 

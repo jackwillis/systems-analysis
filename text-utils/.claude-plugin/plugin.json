@@ -1,6 +1,6 @@
 {
   "name": "text-utils",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Efficient text extraction and format conversion: fetch markdown from URLs, render markdown to PDF, extract text from PDFs, generate name/phrase variations, introduce strategic disfluency.",
   "author": {
     "name": "Jack Willis",

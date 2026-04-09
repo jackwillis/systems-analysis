@@ -40,6 +40,12 @@ The first question — "What's the failure space?" — is where the audit succee
 
 **Step 5: State your confidence.** The enumeration is never complete. Name what you're least confident about. This bounds the audit's reliability.
 
+## When Enumeration Isn't Enough
+
+If your boundary walk produces failure modes that are parameterized — "malformed input" where the malformations are combinatorial, "unexpected state" where the state space is exponential — you've hit a region that enumeration can't cover. The signal: you find yourself writing failure modes with implicit wildcards rather than concrete scenarios.
+
+The response is not to abandon enumeration but to complement it. Use enumeration to map the *structure* of the failure space (which boundaries matter, which consequence categories dominate), then use generative testing — property-based tests, fuzzing — to explore the regions within that structure that are too large to walk by hand. Enumeration tells you *where* to point the generator. The generator covers what enumeration can't.
+
 ## Variety Analysis
 
 This is requisite variety applied to testing:

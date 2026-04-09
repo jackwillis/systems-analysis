@@ -203,6 +203,9 @@ What this study can and cannot answer: [1-2 sentences]
 ## Examples
 
 - [Push notifications and retention](examples/notification-retention.md) — engagement as confounder, incomplete adjustment set, experiment recommendation
+- [Collider bias in hiring](examples/collider-hiring.md) — conditioning on a collider (hired) masks the effect of degree prestige on performance
+- [Non-identifiable mentorship effect](examples/non-identifiable-mentorship.md) — unmeasured confounder blocks identification, lottery experiment required
+- [Rung demotion: code review comments](examples/rung-demotion-code-review.md) — Rung 1 association mistaken for Rung 2 intervention, policy targets signal not cause
 
 ## Arriving From Another Skill
 
