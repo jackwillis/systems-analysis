@@ -46,6 +46,13 @@ If your boundary walk produces failure modes that are parameterized — "malform
 
 The response is not to abandon enumeration but to complement it. Use enumeration to map the *structure* of the failure space (which boundaries matter, which consequence categories dominate), then use generative testing — property-based tests, fuzzing — to explore the regions within that structure that are too large to walk by hand. Enumeration tells you *where* to point the generator. The generator covers what enumeration can't.
 
+**Bound the generator.** A generator without boundaries is R1D1 — exploring everything, guarding nothing. For each parameterized failure mode, state: (1) the property that must hold across all values ("parsed output preserves input length"), (2) the input domain to generate from ("valid UTF-8 strings under 10KB"), and (3) the stopping rule ("1000 cases with no failure, or 5 minutes, whichever comes first"). The property comes from your enumeration. The domain comes from the boundary. The stopping rule is a cost decision — state it explicitly rather than running until you feel done.
+
+> **Example:** Your boundary walk of a webhook handler finds "malformed JSON payload" as a failure mode. You can enumerate a few cases (missing required field, wrong type, extra nesting) but the malformations are combinatorial. Bound the generator:
+> 1. **Property:** The handler either processes the payload correctly or returns a 400 with a parseable error — it never crashes, never half-writes to the database, never returns 200 with silently wrong data.
+> 2. **Domain:** Valid JSON objects up to 50KB with keys drawn from the schema's field names plus random strings, values drawn from the schema's types plus type mismatches and nulls.
+> 3. **Stopping rule:** 5000 generated payloads with no property violation, or 2 minutes wall clock.
+
 ## Variety Analysis
 
 This is requisite variety applied to testing:
