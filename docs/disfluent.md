@@ -1,6 +1,6 @@
 # Disfluent
 
-`/disfluent` — based on Shaw & Nave (2026), Bainbridge (1983), Grice (1975)
+`/disfluent` — based on Shaw & Nave (2026), Bainbridge (1983), Grice (1975) · [Full skill](../text-utils/skills/disfluent/SKILL.md)
 
 ## When to use
 

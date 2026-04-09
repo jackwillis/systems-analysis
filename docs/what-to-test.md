@@ -1,6 +1,6 @@
 # What to Test
 
-`/what-to-test` — based on DeMillo, Lipton & Sayward (1978), Hoare (1969)
+`/what-to-test` — based on DeMillo, Lipton & Sayward (1978), Hoare (1969) · [Full skill](../break-things/skills/what-to-test/SKILL.md)
 
 ## When to use
 

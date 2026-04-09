@@ -1,6 +1,6 @@
 # Debug with a Model
 
-`/representing-and-intervening` — based on Hacking (1983), Schon (1983)
+`/representing-and-intervening` — based on Hacking (1983), Schon (1983) · [Full skill](../systems-analysis/skills/representing-and-intervening/SKILL.md)
 
 ## When to use
 

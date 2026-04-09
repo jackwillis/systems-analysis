@@ -1,6 +1,6 @@
 # Is It Tested
 
-`/is-it-tested` — based on Ashby (1956), Beizer (1990)
+`/is-it-tested` — based on Ashby (1956), Beizer (1990) · [Full skill](../break-things/skills/is-it-tested/SKILL.md)
 
 ## When to use
 

@@ -1,6 +1,6 @@
 # Staleness Check
 
-`/staleness-check` — replaces the former frame-problem skill
+`/staleness-check` — replaces the former frame-problem skill · [Full skill](../systems-analysis/skills/staleness-check/SKILL.md)
 
 ## When to use
 

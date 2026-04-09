@@ -1,6 +1,6 @@
 # Check Your Controls
 
-`/requisite-variety` — based on Ashby (1956), Conant & Ashby (1970)
+`/requisite-variety` — based on Ashby (1956), Conant & Ashby (1970) · [Full skill](../systems-analysis/skills/requisite-variety/SKILL.md)
 
 ## When to use
 

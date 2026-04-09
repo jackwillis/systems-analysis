@@ -1,6 +1,6 @@
 # Subtraction Audit
 
-`/subtraction-audit` — inverse of mutation testing (DeMillo et al., 1978)
+`/subtraction-audit` — inverse of mutation testing (DeMillo et al., 1978) · [Full skill](../break-things/skills/subtraction-audit/SKILL.md)
 
 ## When to use
 

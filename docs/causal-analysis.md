@@ -1,6 +1,6 @@
 # Verify Causal Claims
 
-`/causal-analysis` — based on Pearl & Mackenzie (2018)
+`/causal-analysis` — based on Pearl & Mackenzie (2018) · [Full skill](../systems-analysis/skills/causal-analysis/SKILL.md)
 
 ## When to use
 

@@ -1,6 +1,6 @@
 # Trace Change Propagation
 
-`/propagation-trace` — bounded impact analysis for shared interface changes
+`/propagation-trace` — bounded impact analysis for shared interface changes · [Full skill](../systems-analysis/skills/propagation-trace/SKILL.md)
 
 ## When to use
 

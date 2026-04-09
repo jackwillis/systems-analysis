@@ -1,6 +1,6 @@
 # Riff
 
-`/riff` — invoke explicitly
+`/riff` — invoke explicitly · [Full skill](../text-utils/skills/riff/SKILL.md)
 
 ## When to use
 
