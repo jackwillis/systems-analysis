@@ -1,14 +1,6 @@
 ---
 name: disfluent
-description: |
-  Introduce strategic disfluency into AI-generated text to prevent cognitive
-  surrender. The inverse of humanizer: where humanizer makes AI output pass
-  for human writing, disfluent makes it require human engagement. Two passes
-  (surface + epistemic) and two modes (draft + share). Use when editing AI
-  output before sharing, reviewing your own AI-assisted work, or when you
-  want to force deliberative engagement with text. Triggers on "make this
-  rougher", "add friction", "disfluent", "I don't want people to just
-  accept this", "make me think about this".
+description: Use when editing AI-generated text before sharing or reviewing your own AI-assisted work — especially when the text feels too smooth, too authoritative, or too easy to accept uncritically. Triggers on "make this rougher", "add friction", "disfluent", "I don't want people to just accept this", "make me think about this".
 ---
 
 # Disfluent: Strategic Friction for AI Text

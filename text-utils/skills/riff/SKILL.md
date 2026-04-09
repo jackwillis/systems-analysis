@@ -1,6 +1,6 @@
 ---
 name: riff
-description: Generate name, title, or sentence variations using interleaved diverge/converge rounds. Invoke explicitly with /riff. Takes a seed phrase or description and produces a shortlist of finalists.
+description: Use when the user needs to generate name, title, or phrase variations — especially when stuck on naming, brainstorming alternatives, or wanting to explore options before committing. Triggers on "name ideas", "what should I call", "help me name", "brainstorm names", "alternatives for", or explicit /riff invocation.
 ---
 
 # Riff

@@ -1,6 +1,6 @@
 ---
 name: representing-and-intervening
-description: Use when something is broken or behaving unexpectedly and you need to understand why before fixing it. Triggers on "why is this happening", "help me debug", "it's not working", unexplained gaps between expected and observed behavior, a fix that didn't work, multiple simultaneous changes with unclear results.
+description: Use when you need to understand why a system behaves the way it does before changing it. Triggers on "why is this happening", "I don't understand this behavior", unexplained gaps between expected and observed behavior, a fix that didn't work and you don't know why, multiple simultaneous changes with unclear results.
 ---
 
 # Representing and Intervening
