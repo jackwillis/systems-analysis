@@ -20,7 +20,7 @@ Walks through Pearl's causal framework:
 
 ## What to expect
 
-The skill prompts Claude to push back on causal language that isn't supported by the study design. If the data is observational, it should identify confounders and say whether adjustment can fix them. If not, it should recommend an experiment and sketch the design.
+You'll see Claude push back on causal language that isn't supported by the study design. If the data is observational, it identifies confounders and says whether adjustment can fix them. If not, it recommends an experiment and sketches the design.
 
 For simple causal structures, it states the estimand and the main threat in a sentence each.
 
@@ -28,6 +28,6 @@ For simple causal structures, it states the estimand and the main threat in a se
 
 **Collider bias in hiring.** A company finds no correlation between degree prestige and job performance among employees. The expected output identifies "Hired" as a collider — by only looking at hired employees, you've induced a spurious negative association. The null finding is exactly what collider bias predicts, even if degrees genuinely matter.
 
-**Rung demotion.** A manager sees that PRs with more review comments have fewer production incidents and proposes requiring 3+ comments on all PRs. The expected output identifies PR complexity as a confounder — complex PRs attract both more review and more careful authoring. The policy intervenes on the signal, not the cause.
+**Correlation mistaken for causation.** A manager sees that PRs with more review comments have fewer production incidents and proposes requiring 3+ comments on all PRs. The expected output identifies PR complexity as a confounder — complex PRs attract both more review and more careful authoring. The policy intervenes on the signal, not the cause.
 
 **Non-identifiable effect.** Mentored employees get promoted at 2x the rate. The expected output identifies that mentors select mentees based on unmeasured traits (ambition, visibility) that also drive promotion. The effect isn't identifiable from observational data — recommends a lottery-based assignment when the program is oversubscribed.

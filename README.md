@@ -2,7 +2,7 @@
 
 **Three plugins that add structured reasoning prompts to Claude Code.**
 
-> **Experimental.** Under active development. These skills are prompt-based — the model doesn't always follow them. See `docs/evaluation.md` for the testing methodology.
+> **Experimental.** Under active development. These skills are prompt-based — the model doesn't always follow them. See `docs/internal/evaluation.md` for the testing methodology.
 
 AI coding agents tend toward action over diagnosis. They can guess before modeling the problem, and sometimes treat correlation as causation. These plugins prompt for structured reasoning at the points where that tendency costs the most.
 

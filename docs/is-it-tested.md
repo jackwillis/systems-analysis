@@ -20,7 +20,7 @@ When the failure space is too large to enumerate (combinatorial inputs, exponent
 
 ## What to expect
 
-The skill asks Claude to produce a table mapping failure modes to tests and highlight the gaps — naming specific failure categories (idempotency, ordering, partial failure) rather than reporting coverage percentages.
+You'll see a table mapping failure modes to tests, with gaps highlighted. It names specific failure categories (idempotency, ordering, partial failure) rather than reporting coverage percentages.
 
 ## Example
 

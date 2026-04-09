@@ -22,7 +22,7 @@ Scopes to one module, class, or abstraction layer, then tests each component by 
 
 ## What to expect
 
-The skill asks Claude to actually remove or stub each component and observe what happens, not reason about whether removal would be safe. It distinguishes between dead weight (lesson extracted, remove it) and tuition (still teaching, keep it until the replacement is visible).
+You'll see Claude actually remove or stub each component and observe what happens, not reason about whether removal would be safe. It distinguishes between dead weight (lesson extracted, remove it) and tuition (still teaching, keep it until the replacement is visible).
 
 For small, straightforward codebases: one sentence stating nothing feels heavy, then proceed.
 

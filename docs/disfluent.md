@@ -23,7 +23,7 @@ Two modes:
 
 ## What to expect
 
-The goal is for established facts and direct measurements to get zero friction, with unsupported claims getting heavy friction. If calibrated well, you learn where the text is strong by noticing where friction is absent. In practice, the epistemic pass can over- or under-apply friction (see [open questions](open-questions.md)).
+The goal is for established facts and direct measurements to get zero friction, with unsupported claims getting heavy friction. If calibrated well, you learn where the text is strong by noticing where friction is absent. In practice, the epistemic pass can over- or under-apply friction (see [open questions](internal/open-questions.md)).
 
 The result may read "worse" — that's usually because the original was hiding something behind fluency. But the skill can also over-apply friction. It includes a calibration example showing which sentences to leave alone.
 

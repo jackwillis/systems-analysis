@@ -21,7 +21,7 @@ The key classification: **structurally compatible but behaviorally breaking** �
 
 ## What to expect
 
-The skill asks Claude to use tooling (grep, find-references) for hop one rather than reasoning from memory. Hop two requires judgment about which paths to follow — it prioritizes consumers that use the changing part of the interface and pass the result downstream over leaf nodes.
+You'll see Claude use tooling (grep, find-references) for hop one rather than reasoning from memory. Hop two requires judgment about which paths to follow — it prioritizes consumers that use the changing part of the interface and pass the result downstream over leaf nodes.
 
 For internal changes (refactoring a loop, extracting a private helper), the skill fast-exits: the public interface absorbs the difference, nothing to trace.
 

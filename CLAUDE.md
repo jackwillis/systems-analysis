@@ -10,7 +10,8 @@ Three Claude Code plugins (systems-analysis, break-things, text-utils) in a sing
 systems-analysis/     # epistemic frameworks (R&I, requisite variety, causal analysis, staleness check)
 break-things/         # test design (what-to-test, is-it-tested)
 text-utils/           # text tools (fetch-markdown, markdown-to-pdf, pdf-to-text, riff, disfluent)
-docs/                 # per-skill user-facing docs + evaluation methodology + open questions
+docs/                 # per-skill user-facing docs
+docs/internal/        # contributor-facing: evaluation methodology, open questions, interagent memos
 assets/               # static files
 ```
 
@@ -46,5 +47,5 @@ assets/               # static files
 
 ## Current state
 
-See `docs/evaluation.md` for the skill testing methodology.
-See `docs/open-questions.md` for deferred work items.
+See `docs/internal/evaluation.md` for the skill testing methodology.
+See `docs/internal/open-questions.md` for deferred work items.

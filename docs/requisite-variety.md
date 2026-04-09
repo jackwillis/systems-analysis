@@ -18,7 +18,7 @@ Names the parts of the regulation system and checks three things:
 
 ## What to expect
 
-The skill asks Claude to name the disturbance space (D), the regulator (R), the system being regulated (T), and the acceptable outcome range (E), then count the variety on each side. If R < D, the expected output is direct: "this controller cannot succeed regardless of tuning."
+You'll see Claude name the parts: what can go wrong (the disturbance space), what you have to respond with (the regulator), the system being regulated, and what counts as acceptable — then count the distinct states on each side. If there are more ways things can go wrong than ways you can respond, the output is direct: "this controller cannot succeed regardless of tuning."
 
 For simple cases (one obvious bottleneck), it states the gap in a sentence and moves on.
 
