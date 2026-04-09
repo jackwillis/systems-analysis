@@ -20,7 +20,7 @@ Then the **mutation gate**: state the mutation in English, introduce it, run the
 
 ## What to expect
 
-Claude will focus on one specific failure mode at a time rather than writing a broad test suite. It will predict how the code breaks, write a test for that break, then verify the test by actually introducing the predicted mutation and confirming failure.
+The skill asks Claude to focus on one specific failure mode at a time rather than writing a broad test suite. It should predict how the code breaks, write a test for that break, then verify the test by actually introducing the predicted mutation and confirming failure.
 
 For obvious tests (null check, basic validation), it scales down — no mutation gate needed for a test that asserts a function exists.
 

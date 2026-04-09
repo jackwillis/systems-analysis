@@ -18,6 +18,6 @@ That's it. One check, one re-read. Not a philosophical audit of all assumptions.
 
 ## What to expect
 
-Claude will occasionally pause before an edit to re-read a file you've touched. It won't re-read everything "just to be safe" — it targets the specific file most likely to have changed.
+The skill asks Claude to pause before an edit to re-read a file you've touched since it was last read. It shouldn't re-read everything "just to be safe" — it targets the specific file most likely to have changed.
 
 If you haven't mentioned any changes and Claude just read the file, it proceeds without checking.

@@ -22,7 +22,7 @@ The hard rule: no fix, bypass, or diagnostic action without first stating what y
 
 ## What to expect
 
-Claude will slow down. Instead of immediately suggesting a fix, it will name two or more possible causes, predict an observable difference between them, and test the cheapest one first. If the first test doesn't distinguish, it picks another.
+The skill asks Claude to slow down. Instead of immediately suggesting a fix, it should name two or more possible causes, predict an observable difference between them, and test the cheapest one first. If the first test doesn't distinguish, it picks another.
 
 For simple, obvious problems, the skill scales down — one sentence for the model and prediction, then proceed. It doesn't force ceremony on a typo.
 

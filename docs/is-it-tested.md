@@ -20,7 +20,7 @@ When the failure space is too large to enumerate (combinatorial inputs, exponent
 
 ## What to expect
 
-Claude will produce a table mapping failure modes to tests and highlight the gaps. It won't just report coverage percentages — it will name specific failure categories (idempotency, ordering, partial failure) that have no guards.
+The skill asks Claude to produce a table mapping failure modes to tests and highlight the gaps — naming specific failure categories (idempotency, ordering, partial failure) rather than reporting coverage percentages.
 
 ## Example
 

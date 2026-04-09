@@ -1,16 +1,16 @@
 # Claude Code Plugins for Systems Thinking
 
-**Three plugins that change how Claude Code reasons about your code.**
+**Three plugins that add structured reasoning prompts to Claude Code.**
 
-> **Experimental.** Under active development. Expect rough edges.
+> **Experimental.** Under active development. These skills are prompt-based — the model doesn't always follow them. See `docs/evaluation.md` for the testing methodology.
 
-AI coding agents are biased toward action. They guess before they model, add rules when rules can't keep up, and treat correlation as causation. These plugins add structured reasoning at the points where rushing costs the most.
+AI coding agents tend toward action over diagnosis. They can guess before modeling the problem, and sometimes treat correlation as causation. These plugins prompt for structured reasoning at the points where that tendency costs the most.
 
-### What changes
+### What it looks like
 
-You tell Claude a test passes locally but fails 30% of the time in CI. Without these plugins, it guesses "race condition" and starts adding sleeps.
+You tell Claude a test passes locally but fails 30% of the time in CI. Without a structured prompt, it might guess "race condition" and start adding sleeps.
 
-With them, Claude states two competing models (missing `ORDER BY` vs. race condition), picks the cheapest distinguishing test (check CI config for a parallel runner), confirms, fixes, and verifies. It writes down what it thinks before it touches anything.
+With the representing-and-intervening skill, the goal is for Claude to state two competing models (missing `ORDER BY` vs. race condition), pick the cheapest distinguishing test, and confirm before fixing. In practice, how reliably this happens varies — the skills add structure, not guarantees.
 
 ## Skills
 
