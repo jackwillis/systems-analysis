@@ -216,6 +216,6 @@ Sentences 1, 3, and 4 are direct observations with verifiable claims — no fric
 
 ## References
 
-- Shaw, S.D. & Nave, G. (2026). "Thinking — Fast, Slow, and Artificial." Working paper, Wharton School. [Working paper — not peer-reviewed. The cognitive surrender framing is theirs; this skill assumes it's directionally right.]
+- Shaw, S.D. & Nave, G. (2026). "Thinking — Fast, Slow, and Artificial." Working paper, Wharton School. [Working paper — not peer-reviewed, but preregistered with three CRT-based studies. Key findings: (1) participants track AI accuracy but confidence inflates even when they know the AI is wrong, (2) item-level feedback shifts behavior from surrender to strategic offloading, (3) low Need for Cognition predicts vulnerability. The cognitive surrender framing is theirs; this skill assumes it's directionally right. Ecological validity caveat: CRT quiz tasks aren't the same as reading a post-mortem.]
 - Bainbridge, L. (1983). "Ironies of Automation." Automatica, 19(6), 775-779. [About industrial automation, not AI text. The connection is by analogy.]
 - Grice, H.P. (1975). "Logic and Conversation." In Syntax and Semantics 3: Speech Acts.

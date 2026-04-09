@@ -12,13 +12,25 @@ This is an informal observation, not a formal test. Notice it next time you use 
 
 The surface pass (strip connectives, break parallel structure) is mechanical and verifiable — either it stripped "Furthermore" or it didn't. The epistemic pass (flag unsupported claims, surface hidden uncertainty, leave gaps for human judgment, mark provenance) requires judgment, and that's where the skill could fail silently.
 
+### What the source paper actually found
+
+Shaw & Nave (2026) ran three preregistered CRT-based studies. The key findings that bear on this skill:
+
+1. **Confidence inflation.** Participants' self-reported confidence *increased* after engaging with AI output, even when they knew the AI was wrong. This suggests the cost of under-flagging is higher than the cost of over-flagging — unflagged text actively inflates the reader's confidence in claims they haven't evaluated.
+
+2. **Item-level feedback shifts behavior.** When participants received specific, per-item feedback (not just a general warning), they shifted from cognitive surrender (uncritical acceptance) to cognitive offloading (strategic delegation). This validates the bracket-annotation design in draft mode — specific flags like `[causal claim — was it X or something else?]` should prompt engagement, while generic flags like `[this might be wrong]` won't.
+
+3. **Need for Cognition as moderator.** Low-NFC individuals are more vulnerable to surrender. Share mode (text going to others who may have low NFC) should err toward more friction, not less. Draft mode (self-review by the author, presumably higher NFC) can be more selective.
+
+**Ecological validity caveat:** The studies used CRT quiz questions, not realistic work artifacts. Whether the findings transfer to developers reading post-mortems or managers reading status updates is an open question. The mechanism (fluency → confidence → surrender) is plausible but unconfirmed in professional contexts.
+
 ### Failure modes
 
-1. **Over-flagging.** Every sentence gets a bracket. The model treats all uncertainty as equal — a well-sourced statistic gets the same friction as a baseless causal claim. The reader learns nothing from the friction because it's uniform. The calibration example (Postgres migration) was added to demonstrate restraint, but one example may not be enough to calibrate the model's behavior across diverse inputs.
+1. **Over-flagging.** Every sentence gets a bracket. The model treats all uncertainty as equal — a well-sourced statistic gets the same friction as a baseless causal claim. The reader learns nothing from the friction because it's uniform. The calibration example (Postgres migration) was added to demonstrate restraint, but one example may not be enough to calibrate the model's behavior across diverse inputs. *However:* the confidence-inflation finding suggests over-flagging may be less harmful than under-flagging. An over-flagged document prompts the reader to evaluate each flag. An under-flagged document inflates confidence in the unflagged claims.
 
 2. **Under-flagging.** The model flags surface-level uncertainty ("improved" without a metric) but misses deeper epistemic problems (selection bias in the data, survivorship in the sample, an unfalsifiable claim dressed as an empirical one). The expanded trigger list (precision without uncertainty, temporal coincidence as causation, absence of alternatives) targets this, but the triggers are still patterns to match — they don't help the model recognize novel forms of hidden uncertainty.
 
-3. **Performing uncertainty theater.** The model adds hedges and brackets that look like epistemic humility but don't correspond to real uncertainty in the text. "This may reflect..." inserted before a claim that is actually well-supported. The brackets become decoration rather than diagnosis.
+3. **Performing uncertainty theater.** The model adds hedges and brackets that look like epistemic humility but don't correspond to real uncertainty in the text. "This may reflect..." inserted before a claim that is actually well-supported. The brackets become decoration rather than diagnosis. The paper's finding on item-level feedback suggests the fix: flags must be *specific* (name the epistemic issue) rather than *generic* (express vague doubt). The specificity metric in the eval captures this.
 
 ### How to test
 
