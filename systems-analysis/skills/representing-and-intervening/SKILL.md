@@ -86,7 +86,7 @@ Stop and return to Represent if you catch yourself:
 
 ## Arriving From Another Skill
 
-- **From frame-problem:** You've named assumptions and checked freshness. Carry the verified assumptions into your Represent phase — they're your starting constraints. Focus Represent on the parts the frame audit flagged as uncertain.
+- **From staleness-check:** You re-read stale information and found it changed. Carry the updated state into your Represent phase rather than building on the old read.
 - **From causal-analysis:** You have a DAG and identified causal relationships. Use them as your model in Represent rather than building from scratch. Your prediction should test the edges you're least confident about.
 - **From requisite-variety:** You've identified a variety gap or regulation failure. The regulation model is your starting Represent — now ask *why* the regulator fails, which is an R&I question.
 
@@ -96,7 +96,7 @@ Stop and return to Represent if you catch yourself:
 - **Represent phase needs causal structure from observational data** (confounders, selection bias) → suggest **causal-analysis** to the user.
 - **Production is down, what broke?** → suggest **systematic-debugging** to the user (forensic, not epistemic).
 - **Update reveals structural revision** — the model was wrong, not miscalibrated. If **brainstorming** is available, suggest it to the user to explore the problem space before committing to a new model.
-- **Assumptions feel stale or unexamined** — you have a model but haven't checked whether the world still matches it → suggest **frame-problem** to the user.
+- **Acting on information that may have changed** — turns have passed or the user acted since your last read → suggest **staleness-check** to the user.
 - **Model is solid, intervention plan is clear** — if **writing-plans** is available, suggest it to the user. For multi-step fixes, suggest **executing-plans** or **subagent-driven-development**.
 - **Prediction is clear and you need to encode it as a test** — if **what-to-test** is available, suggest it to the user. R&I's prediction becomes the test's causal claim.
 

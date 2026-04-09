@@ -207,7 +207,7 @@ What this study can and cannot answer: [1-2 sentences]
 ## Arriving From Another Skill
 
 - **From representing-and-intervening:** You have a model with identified relationships. These relationships are your candidate DAG edges. Start at Step 4 (Draw the DAG) rather than Step 2 (Gather Context) — R&I already did that work. Flag which edges R&I was least confident about; those are your priority for confounding checks.
-- **From frame-problem:** A frame audit revealed an unexamined causal assumption ("we assumed X causes Y"). That assumption is your target estimand. Start at Step 1 to locate it on Pearl's Ladder.
+- **From staleness-check:** A re-read revealed that a causal assumption no longer holds ("we assumed X causes Y but the system changed"). That assumption is your target estimand. Start at Step 1 to locate it on Pearl's Ladder.
 
 ## Transition Signals
 

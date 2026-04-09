@@ -76,7 +76,7 @@ A team has 200+ custom WAF rules but keeps getting breached. The SOC wants more 
 ## Arriving From Another Skill
 
 - **From representing-and-intervening:** You have a model from R&I's Represent phase. Map its components to D/R/T/E/η rather than re-deriving them. The R&I model tells you *how the system works*; now ask *whether the regulator has enough variety to control it*.
-- **From frame-problem:** The frame audit may have revealed that "our controls are sufficient" was an unexamined assumption. Start the variety check at that specific assumption.
+- **From staleness-check:** A re-read revealed the system changed since the regulator was designed. Re-check whether the regulator's variety still matches the disturbance space.
 
 ## Transition Signals
 
