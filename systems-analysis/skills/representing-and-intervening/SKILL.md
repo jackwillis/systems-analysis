@@ -106,5 +106,6 @@ Stop and return to Represent if you catch yourself:
 - **Acting on information that may have changed** — turns have passed or the user acted since your last read → suggest **staleness-check** to the user.
 - **Model is solid, intervention plan is clear** — if **writing-plans** is available, suggest it to the user. For multi-step fixes, suggest **executing-plans** or **subagent-driven-development**.
 - **Prediction is clear and you need to encode it as a test** — if **what-to-test** is available, suggest it to the user. R&I's prediction becomes the test's causal claim.
+- **About to change a shared interface** (function signature, default value, API contract, data format) — suggest **propagation-trace** to the user. R&I modeled the system; propagation trace asks "what moves when I change this component?"
 
 R&I is epistemic: *how does this work, and what will happen if I change it?*

@@ -64,6 +64,7 @@ This is targeted mutation testing (DeMillo et al., 1978): one predicted mutation
 
 - **From representing-and-intervening:** R&I's Predict phase identified what should happen. The prediction is your causal claim — carry it directly into question 2. The failure mode R&I was least confident about is your priority for question 3.
 - **From staleness-check:** A re-read revealed something changed since you last looked. The thing that changed is context for question 1 (what you're guarding against) — if the code moved, your old test target may be wrong.
+- **From propagation-trace:** Each breaking consumer from the trace is your answer to question 1 (what you're guarding against). The behavioral break — structurally compatible but semantically wrong — is the predicted failure mode for question 3.
 
 ## Transition Signals
 
