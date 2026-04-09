@@ -63,7 +63,7 @@ This is targeted mutation testing (DeMillo et al., 1978): one predicted mutation
 ## Arriving From Another Skill
 
 - **From representing-and-intervening:** R&I's Predict phase identified what should happen. The prediction is your causal claim — carry it directly into question 2. The failure mode R&I was least confident about is your priority for question 3.
-- **From frame-problem:** A frame audit revealed an assumption that isn't tested. The assumption is your answer to question 1 (what you're guarding against). The frame that could go stale is the failure mode for question 3.
+- **From staleness-check:** A re-read revealed something changed since you last looked. The thing that changed is context for question 1 (what you're guarding against) — if the code moved, your old test target may be wrong.
 
 ## Transition Signals
 
