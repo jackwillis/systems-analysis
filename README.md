@@ -27,8 +27,8 @@ Analysis frameworks for modeling, causation, and control. Install:
 | [Debug with a model](docs/representing-and-intervening.md) | `/representing-and-intervening` | "why is this happening", unexplained behavior |
 | [Check your controls](docs/requisite-variety.md) | `/requisite-variety` | regulation failure, alert fatigue |
 | [Verify causal claims](docs/causal-analysis.md) | `/causal-analysis` | "does X cause Y", observational data |
-| [Staleness check](docs/staleness-check.md) | `/staleness-check` | acting on information read earlier, user signals changes |
 | [Trace change propagation](docs/propagation-trace.md) | `/propagation-trace` | changing a shared interface, editing function signatures, altering defaults |
+| [Staleness check](docs/staleness-check.md) | `/staleness-check` | acting on information read earlier, user signals changes |
 
 ### Break Things
 
