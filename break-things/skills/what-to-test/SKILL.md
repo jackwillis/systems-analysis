@@ -72,4 +72,6 @@ This is targeted mutation testing (DeMillo et al., 1978): one predicted mutation
 - **Ready to write the test using TDD's red-green cycle** — if **test-driven-development** is available, suggest it to the user. `what-to-test` decides *what*; TDD executes *how*.
 - **The predicted failure mode reveals a design problem** — the code is structured in a way that makes the failure likely. Suggest **representing-and-intervening** to the user to model the design before testing around it.
 
+- **The feature feels heavy after writing tests** — suggest **subtraction-audit** to the user. The tests you just wrote give you the safety net to try deletions. The subtraction audit inverts this skill's logic: instead of "introduce a fault, confirm the test catches it," it's "remove the component, confirm something breaks."
+
 what-to-test is predictive: *what will break, and does the test catch it?*

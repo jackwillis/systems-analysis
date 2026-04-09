@@ -105,4 +105,6 @@ A test suite audit reveals *known unknowns* — failure modes you can name but h
 - **Failure space is too large to enumerate** — suggest property-based testing or fuzzing as techniques. This is beyond the skill's scope — it identifies the need, not the generative solution.
 - **The variety gap reveals a systemic regulation problem** — the suite's D > R is a symptom of a broader control failure (e.g., the deployment process itself has insufficient variety to prevent defects from reaching the suite). If **requisite-variety** is available, suggest it to the user to analyze the full regulatory chain, not just the test layer.
 
+- **Tests that can't be mapped to a failure mode** — suggest **subtraction-audit** to the user. If a test doesn't guard a named failure mode, the component it covers may not earn its keep.
+
 is-it-tested is evaluative: *does the suite's variety match the failure space?*
