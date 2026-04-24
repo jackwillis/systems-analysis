@@ -58,6 +58,7 @@ Text extraction, conversion, and generation. Install:
 | [Riff](docs/riff.md) | `/riff` | Invoke explicitly |
 | Fetch markdown | `/fetch-markdown` | Fetching web content |
 | Markdown to PDF | `/markdown-to-pdf` | "make a PDF", "export as PDF" |
+| Markdown to EPUB | `/markdown-to-epub` | "make an epub", "ebook version" |
 | PDF to text | `/pdf-to-text` | "read this PDF", scanned documents |
 
 ### Marketplace

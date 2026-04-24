@@ -1,0 +1,63 @@
+/* Minimal EPUB stylesheet.
+   Reflowable readers override most typography — keep this small on purpose.
+   Users pick their font, size, and margins. We set structural defaults only. */
+
+body {
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  page-break-after: avoid;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 { page-break-before: always; }
+
+p {
+  margin: 0 0 0.75em 0;
+  text-indent: 0;
+}
+
+blockquote {
+  margin: 1em 1.5em;
+  font-style: italic;
+}
+
+pre, code {
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 0.5em;
+  background-color: #f4f4f4;
+  border-radius: 3px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #999;
+  margin: 2em auto;
+  width: 50%;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+th, td {
+  border: 1px solid #999;
+  padding: 0.3em 0.6em;
+}
