@@ -61,6 +61,15 @@ div.references {
   line-height: 1.4;
 }
 
+sup.link-ref {
+  font-size: 0.7em;
+  line-height: 0;
+  color: #1a5276;
+}
+
+sup.link-ref::before { content: "["; color: #999; }
+sup.link-ref::after  { content: "]"; color: #999; }
+
 span.footnote {
   float: footnote;
   font-size: 9pt;
