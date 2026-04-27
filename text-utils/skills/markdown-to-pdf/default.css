@@ -1,9 +1,7 @@
 /* Default theme: clean document, ~75 character line measure */
 
 body {
-  /* Serif stack: macOS → iOS → Windows → Linux → Android → generic */
-  font-family: "Charis SIL", Charter, "Iowan Old Style", "Palatino Linotype",
-               "URW Palladio L", "Droid Serif", Palatino, Georgia, serif;
+  font-family: "Charis SIL", Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
   max-width: 36em; /* ~75 chars at serif proportions */
   margin: 2em auto;
   padding: 0 1em;
